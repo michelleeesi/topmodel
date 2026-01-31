@@ -231,7 +231,7 @@ def compute_frame_gaps(query: PairwiseQuery,
     left_features = query.patient_left.to_array()
     right_features = query.patient_right.to_array()
     gaps = lambda_x * (left_features - right_features)
-    active_frames = set(np.where(np.abs(gaps) >= tau)[0].tolist())
+    active_frames = set(np.where(np.abs(gaps) > tau)[0].tolist())
     return gaps, active_frames
 
 
