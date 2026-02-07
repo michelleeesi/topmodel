@@ -280,6 +280,137 @@ def predict_response(query: PairwiseQuery,
 
 
 # ============================================================================
+# Noise injection for latent margins
+# ============================================================================
+
+def no_noise(delta_omega: float, r_omega: float) -> Tuple[float, float]:
+    """
+    No noise injection - returns latent margins unchanged.
+
+    This gives the deterministic frame model.
+    """
+    return delta_omega, r_omega
+
+
+def logistic_noise(scale: float = 1.0):
+    """
+    Factory for logistic noise injection (Bradley-Terry equivalent).
+
+    When tau=tau'=0, this gives:
+        P(left) = sigmoid(delta_omega / scale)
+
+    which is exactly the Bradley-Terry model.
+
+    Parameters
+    ----------
+    scale : float
+        Scale parameter of the logistic distribution.
+        Larger scale = more noise = more randomness in responses.
+
+    Returns
+    -------
+    noise_fn : callable(delta_omega, r_omega) -> (delta_tilde, r_tilde)
+    """
+    def noise_fn(delta_omega: float, r_omega: float) -> Tuple[float, float]:
+        # Logistic(0, scale) has CDF = sigmoid(x/scale)
+        # So P(delta + eta > 0) = P(eta > -delta) = sigmoid(delta/scale)
+        eta = np.random.logistic(loc=0, scale=scale)
+        return delta_omega + eta, r_omega
+
+    return noise_fn
+
+
+def normal_noise(scale: float = 1.0):
+    """
+    Factory for normal/Gaussian noise injection (Thurstone-Mosteller equivalent).
+
+    When tau=tau'=0, this gives:
+        P(left) = Phi(delta_omega / scale)
+
+    which is exactly the Thurstone-Mosteller (Case V) model.
+
+    Parameters
+    ----------
+    scale : float
+        Standard deviation of the normal distribution.
+        Larger scale = more noise = more randomness in responses.
+
+    Returns
+    -------
+    noise_fn : callable(delta_omega, r_omega) -> (delta_tilde, r_tilde)
+    """
+    def noise_fn(delta_omega: float, r_omega: float) -> Tuple[float, float]:
+        eta = np.random.normal(loc=0, scale=scale)
+        return delta_omega + eta, r_omega
+
+    return noise_fn
+
+
+def predict_response_noisy(
+    query: PairwiseQuery,
+    weights: np.ndarray,
+    noise_fn = no_noise,
+    tau: float = TAU,
+    lambda_x: float = LAMBDA_X,
+    tau_prime: float = TAU_PRIME,
+) -> str:
+    """
+    Predict response with noise injection into latent margins.
+
+    This function:
+    1. Computes the latent margins (delta_omega, r_omega)
+    2. Applies noise_fn to get (delta_tilde, r_tilde)
+    3. Applies the frame decision rule to the noisy margins
+
+    Parameters
+    ----------
+    query : PairwiseQuery
+        The comparison query
+    weights : np.ndarray
+        Weight vector omega on the simplex
+    noise_fn : callable
+        Noise injection function: (delta, r) -> (delta_tilde, r_tilde)
+        Use no_noise for deterministic, logistic_noise(scale) for BT,
+        or normal_noise(scale) for Thurstone-Mosteller.
+    tau : float
+        Intensity threshold for indifference
+    lambda_x : float
+        Feature scaling factor
+    tau_prime : float
+        Resolvability threshold for incomparability
+
+    Returns
+    -------
+    response : str
+        One of 'left', 'right', 'indifferent', 'incomparable'
+
+    Notes
+    -----
+    When tau=tau'=0:
+    - With logistic_noise(scale=1), this equals Bradley-Terry
+    - With normal_noise(scale=1), this equals Thurstone-Mosteller
+    """
+    # Step 1: Compute gaps and aggregate scores (no change)
+    gaps, active_frames = compute_frame_gaps(query, lambda_x, tau)
+    delta_omega, r_omega = compute_aggregate_scores(gaps, weights, active_frames)
+
+    # Step 2: Apply noise injection
+    delta_tilde, r_tilde = noise_fn(delta_omega, r_omega)
+
+    # Step 3: Apply decision rule to noisy margins
+    if r_tilde < tau:
+        return 'indifferent'
+    if r_tilde >= tau and np.abs(delta_tilde) < tau_prime * r_tilde:
+        return 'incomparable'
+    elif r_tilde >= tau and delta_tilde >= tau_prime * r_tilde:
+        return 'left'
+    elif r_tilde >= tau and delta_tilde <= -tau_prime * r_tilde:
+        return 'right'
+    else:
+        return 'indifferent'
+
+
+# ============================================================================
 # Volume removal
 # ============================================================================
 
