@@ -168,12 +168,12 @@ def setup_style(use_latex=True):
             'text.usetex': True,
             'text.latex.preamble': r'\usepackage{libertine}\usepackage[libertine]{newtxmath}',
             'font.family': 'serif',
-            'font.size': 9,
-            'axes.labelsize': 9,
-            'axes.titlesize': 9,
-            'legend.fontsize': 8,
-            'xtick.labelsize': 8,
-            'ytick.labelsize': 8,
+            'font.size': 8,
+            'axes.labelsize': 8,
+            'axes.titlesize': 8,
+            'legend.fontsize': 7,
+            'xtick.labelsize': 7,
+            'ytick.labelsize': 7,
         }
     else:
         # Fallback: use best available system fonts
@@ -181,12 +181,12 @@ def setup_style(use_latex=True):
             'text.usetex': False,
             'font.family': 'serif',
             'font.serif': ['Palatino', 'Times New Roman', 'Times', 'DejaVu Serif'],
-            'font.size': 9,
-            'axes.labelsize': 9,
-            'axes.titlesize': 9,
-            'legend.fontsize': 8,
-            'xtick.labelsize': 8,
-            'ytick.labelsize': 8,
+            'font.size': 8,
+            'axes.labelsize': 8,
+            'axes.titlesize': 8,
+            'legend.fontsize': 7,
+            'xtick.labelsize': 7,
+            'ytick.labelsize': 7,
             'mathtext.fontset': 'stix',
         }
 
@@ -205,7 +205,7 @@ def paper_style(
     width: float = SINGLE_COLUMN,
     aspect: float = 0.618,  # golden ratio
     use_latex: bool = True,
-    font_size: int = 9,
+    font_size: int = 8,
 ):
     """
     Context manager for publication-quality plots.
