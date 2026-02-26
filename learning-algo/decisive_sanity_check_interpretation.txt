@@ -1,0 +1,25 @@
+
+============================================================
+INTERPRETATION
+============================================================
+
+1. Unconstrained LR (A): IMPROVES with k
+   Log-loss at k=10: 1.0053
+   Log-loss at k=500: 0.4688
+
+2. Simplex s=1 (B1): IMPROVES with k
+   Log-loss at k=10: 0.6496
+   Log-loss at k=500: 0.6322
+
+3. Learnable scale (B2): HELPS
+   B1 log-loss at k=500: 0.6322
+   B2 log-loss at k=500: 0.4688
+
+4. BALD vs Random (C vs B1): BALD BETTER
+   B1 (random) log-loss at k=500: 0.6322
+   C (BALD) log-loss at k=500: 0.6309
+
+------------------------------------------------------------
+OVERALL CONCLUSION:
+  Both methods improve with k, suggesting the oracle is
+  consistent with a BT model structure.
