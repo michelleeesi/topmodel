@@ -1,0 +1,111 @@
+FOOD (incoming donation),,,SIZE (recipient organization size),,,ACCESS (clients' access to food),,,INCOME ( household median income of the clients’ neighborhood),,,POVERTY (percentage of people in poverty within the population of clients’ neighborhood),,,LAST DONATION (the last time the recipient organization received a donation from 412 Food Rescue),,, DONATION ( number of donations that the recipient has received in the last three months),,,DISTANCE (time it takes to transport donation from the donor to recipient),,
+Indices,Image Name,Actual Value/Meaning,Indices,Image Name,Actual Value/Meaning,Indices,Image Name,Actual Value/Meaning,Indices,Image Name,Actual Value/Meaning,Indices,Image Name,Actual Value/Meaning,Indices,Image Name,Actual Value/Meaning,Indices,Image Name,Actual Value/Meaning,Indices,Image Name,Actual Value/Meaning
+0,common,Common Donation,0,recipient<50,less than 50 monthly clients,0,higha(b),normal food access,0,income0,$020k  household income,0,poverty010,0-10% poverty rate,0,last0,never recieved donation,0,total-0-0-0,never received donation,0,distance15,15 minutes drive
+1,lesscommon,Less Common Donation,1,recipient50,50 monthly clients ,1,lowa(b),low food access,1,income20,$2040k  household income,1,poverty1020,20-30% poverty rate,1,last1,recieved donation 1 week ago,1,total-1-0-1,total of 1 donations = 0 common + 1 less common,1,distance30,30 minutes drive
+,,,2,recipient100,100 monthly clients,2,extraa(b),extremely low food access,2,income40,$4060k  household income,2,poverty2030,30-40% poverty rate,2,last2,recieved donation 2 weeks ago,2,total-1-1-0,total of 1 donations = 1 common + 0 less common,2,distance45,45 minutes drive
+,,,3,recipient500,500 monthly clients,,,,3,income60,$6080k  household income,3,poverty3040,40-50% poverty rate,3,last3,recieved donation 3 weeks ago,3,total-2-0-2,total of 2 donations = 0 common + 2 less common,3,distance60,60+ minutes drive
+,,,4,recipient1000,1000 monthly clients,"Low Access= >1/2 mile in cities, >10 miles rural ",,,4,income80,$80100k  household income,4,poverty4050,40-50% poverty rate,4,last4,recieved donation 4 weeks ago,4,total-2-1-1,total of 2 donations = 1 common + 1 less common,,,
+,,,,,,"Extremely Low= >1 mile cities, >20 miles rural",,,5,income100,$100k+  household income,5,poverty5060,50-60% poverty rate,5,last5,recieved donation 5 weeks ago,5,total-2-2-0,total of 2 donations = 2 common + 0 less common,,,
+,,,,,,,,,,,,6,poverty60+,60+% poverty rate,6,last6,recieved donation 6 weeks ago,6,total-3-0-3,total of 3 donations = 0 common + 3 less common,,,
+,,,,,,,,,,,,,,,7,last7,recieved donation 7 weeks ago,7,total-3-1-2,total of 3 donations = 1 common + 2 less common,,,
+,,,,,,,,,,,,"//recipient A combos
+    if (incomeA == 0) { //when income is 0-20k, poverty is between 0-60+%
+        povertyA = (random([0,1,2,3,4,5,6,7]));
+    }
+    if (incomeA == 1) { //when income is 20-40k, poverty is between 0-50%
+        povertyA = (random([0,1,2,3,4]));
+    }
+    if (incomeA == 2) { //when income is 40-60k, poverty is between 0-40%
+        povertyA = (random([0,1,2,3]));
+    }
+    if (incomeA == 3) { //when income is 60-80k, poverty is between 0-20%
+        povertyA = (random([0,1]));
+    }
+    if (incomeA == 4) { //when income is 80-100k, poverty is between 0-20%
+        povertyA = (random([0,1]));
+    }
+    if (incomeA == 5) { //when income is 100k+, poverty is between 0-20%
+        povertyA = (random([0,1]));
+    }",,,8,last8,recieved donation 8 weeks ago,8,total-3-2-1,total of 3 donations = 2 common + 1 less common,,,
+,,,,,,,,,,,,,,,9,last9,recieved donation 9 weeks ago,9,total-3-3-0,total of 3 donations = 3 common + 0 less common,,,
+,,,,,,,,,,,,,,,10,last10,recieved donation 10 weeks ago,10,total-4-0-4,total of 4 donations = 0 common + 4 less common,,,
+,,,,,,,,,,,,,,,11,last11,recieved donation 11 weeks ago,11,total-4-1-3,total of 4 donations = 1 common + 3 less common,,,
+,,,,,,,,,,,,,,,12,last12,recieved donation 12 weeks ago,12,total-4-2-2,total of 4 donations = 2 common + 2 less common,,,
+,,,,,,,,,,,,,,,,,,13,total-4-3-1,total of 4 donations = 3 common + 1 less common,,,
+,,,,,,,,,,,,,,,,,,14,total-4-4-0,total of 4 donations = 4 common + 0 less common,,,
+,,,,,,,,,,,,,,,,,,15,total-5-0-5,total of 5 donations = 0 common + 5 less common,,,
+,,,,,,,,,,,,,,,,,,16,total-5-1-4,total of 5 donations = 1 common + 4 less common,,,
+,,,,,,,,,,,,,,,,,,17,total-5-2-3,total of 5 donations = 2 common + 3 less common,,,
+,,,,,,,,,,,,,,,,,,18,total-5-3-2,total of 5 donations = 3 common + 2 less common,,,
+,,,,,,,,,,,,,,,,,,19,total-5-4-1,total of 5 donations = 4 common + 1 less common,,,
+,,,,,,,,,,,,,,,,,,20,total-5-5-0,total of 5 donations = 5 common + 0 less common,,,
+,,,,,,,,,,,,,,,,,,21,total-6-0-6,total of 6 donations = 0 common + 6 less common,,,
+,,,,,,,,,,,,,,,,,,22,total-6-1-5,total of 6 donations = 1 common + 5 less common,,,
+,,,,,,,,,,,,,,,,,,23,total-6-2-4,total of 6 donations = 2 common + 4 less common,,,
+,,,,,,,,,,,,,,,,,,24,total-6-3-3,total of 6 donations = 3 common + 3 less common,,,
+,,,,,,,,,,,,,,,,,,25,total-6-4-2,total of 6 donations = 4 common + 2 less common,,,
+,,,,,,,,,,,,,,,,,,26,total-6-5-1,total of 6 donations = 5 common + 1 less common,,,
+,,,,,,,,,,,,,,,,,,27,total-6-6-0,total of 6 donations = 6 common + 0 less common,,,
+,,,,,,,,,,,,,,,,,,28,total-7-0-7,total of 7 donations = 0 common + 7 less common,,,
+,,,,,,,,,,,,,,,,,,29,total-7-1-6,total of 7 donations = 1 common + 6 less common,,,
+,,,,,,,,,,,,,,,,,,30,total-7-2-5,total of 7 donations = 2 common + 5 less common,,,
+,,,,,,,,,,,,,,,,,,31,total-7-3-4,total of 7 donations = 3 common + 4 less common,,,
+,,,,,,,,,,,,,,,,,,32,total-7-4-3,total of 7 donations = 4 common + 3 less common,,,
+,,,,,,,,,,,,,,,,,,33,total-7-5-2,total of 7 donations = 5 common + 2 less common,,,
+,,,,,,,,,,,,,,,,,,34,total-7-6-1,total of 7 donations = 6 common + 1 less common,,,
+,,,,,,,,,,,,,,,,,,35,total-7-7-0,total of 7 donations = 7 common + 0 less common,,,
+,,,,,,,,,,,,,,,,,,36,total-8-0-8,total of 8 donations = 0 common + 8 less common,,,
+,,,,,,,,,,,,,,,,,,37,total-8-1-7,total of 8 donations = 1 common + 7 less common,,,
+,,,,,,,,,,,,,,,,,,38,total-8-2-6,total of 8 donations = 2 common + 6 less common,,,
+,,,,,,,,,,,,,,,,,,39,total-8-3-5,total of 8 donations = 3 common + 5 less common,,,
+,,,,,,,,,,,,,,,,,,40,total-8-4-4,total of 8 donations = 4 common + 4 less common,,,
+,,,,,,,,,,,,,,,,,,41,total-8-5-3,total of 8 donations = 5 common + 3 less common,,,
+,,,,,,,,,,,,,,,,,,42,total-8-6-2,total of 8 donations = 6 common + 2 less common,,,
+,,,,,,,,,,,,,,,,,,43,total-8-7-1,total of 8 donations = 7 common + 1 less common,,,
+,,,,,,,,,,,,,,,,,,44,total-8-8-0,total of 8 donations = 8 common + 0 less common,,,
+,,,,,,,,,,,,,,,,,,45,total-9-0-9,total of 9 donations = 0 common + 9 less common,,,
+,,,,,,,,,,,,,,,,,,46,total-9-1-8,total of 9 donations = 1 common + 8 less common,,,
+,,,,,,,,,,,,,,,,,,47,total-9-2-7,total of 9 donations = 2 common + 7 less common,,,
+,,,,,,,,,,,,,,,,,,48,total-9-3-6,total of 9 donations = 3 common + 6 less common,,,
+,,,,,,,,,,,,,,,,,,49,total-9-4-5,total of 9 donations = 4 common + 5 less common,,,
+,,,,,,,,,,,,,,,,,,50,total-9-5-4,total of 9 donations = 5 common + 4 less common,,,
+,,,,,,,,,,,,,,,,,,51,total-9-6-3,total of 9 donations = 6 common + 3 less common,,,
+,,,,,,,,,,,,,,,,,,52,total-9-7-2,total of 9 donations = 7 common + 2 less common,,,
+,,,,,,,,,,,,,,,,,,53,total-9-8-1,total of 9 donations = 8 common + 1 less common,,,
+,,,,,,,,,,,,,,,,,,54,total-9-9-0,total of 9 donations = 9 common + 0 less common,,,
+,,,,,,,,,,,,,,,,,,55,total-10-0-10,total of 10 donations = 0 common + 10 less common,,,
+,,,,,,,,,,,,,,,,,,56,total-10-1-9,total of 10 donations = 1 common + 9 less common,,,
+,,,,,,,,,,,,,,,,,,57,total-10-2-8,total of 10 donations = 2 common + 8 less common,,,
+,,,,,,,,,,,,,,,,,,58,total-10-3-7,total of 10 donations = 3 common + 7 less common,,,
+,,,,,,,,,,,,,,,,,,59,total-10-4-6,total of 10 donations = 4 common + 6 less common,,,
+,,,,,,,,,,,,,,,,,,60,total-10-5-5,total of 10 donations = 5 common + 5 less common,,,
+,,,,,,,,,,,,,,,,,,61,total-10-6-4,total of 10 donations = 6 common + 4 less common,,,
+,,,,,,,,,,,,,,,,,,62,total-10-7-3,total of 10 donations = 7 common + 3 less common,,,
+,,,,,,,,,,,,,,,,,,63,total-10-8-2,total of 10 donations = 8 common + 2 less common,,,
+,,,,,,,,,,,,,,,,,,64,total-10-9-1,total of 10 donations = 9 common + 1 less common,,,
+,,,,,,,,,,,,,,,,,,65,total-10-10-0,total of 10 donations = 10 common + 0 less common,,,
+,,,,,,,,,,,,,,,,,,66,total-11-0-11,total of 11 donations = 0 common + 11 less common,,,
+,,,,,,,,,,,,,,,,,,67,total-11-1-10,total of 11 donations = 1 common + 10 less common,,,
+,,,,,,,,,,,,,,,,,,68,total-11-2-9,total of 11 donations = 2 common + 9 less common,,,
+,,,,,,,,,,,,,,,,,,69,total-11-3-8,total of 11 donations = 3 common + 8 less common,,,
+,,,,,,,,,,,,,,,,,,70,total-11-4-7,total of 11 donations = 4 common + 7 less common,,,
+,,,,,,,,,,,,,,,,,,71,total-11-5-6,total of 11 donations = 5 common + 6 less common,,,
+,,,,,,,,,,,,,,,,,,72,total-11-6-5,total of 11 donations = 6 common + 5 less common,,,
+,,,,,,,,,,,,,,,,,,73,total-11-7-4,total of 11 donations = 7 common + 4 less common,,,
+,,,,,,,,,,,,,,,,,,74,total-11-8-3,total of 11 donations = 8 common + 3 less common,,,
+,,,,,,,,,,,,,,,,,,75,total-11-9-2,total of 11 donations = 9 common + 2 less common,,,
+,,,,,,,,,,,,,,,,,,76,total-11-10-1,total of 11 donations = 10 common + 1 less common,,,
+,,,,,,,,,,,,,,,,,,77,total-11-11-0,total of 11 donations = 11 common + 0 less common,,,
+,,,,,,,,,,,,,,,,,,78,total-12-0-12,total of 12 donations = 0 common + 12 less common,,,
+,,,,,,,,,,,,,,,,,,79,total-12-1-11,total of 12 donations = 1 common + 11 less common,,,
+,,,,,,,,,,,,,,,,,,80,total-12-2-10,total of 12 donations = 2 common + 10 less common,,,
+,,,,,,,,,,,,,,,,,,81,total-12-3-9,total of 12 donations = 3 common + 9 less common,,,
+,,,,,,,,,,,,,,,,,,82,total-12-4-8,total of 12 donations = 4 common + 8 less common,,,
+,,,,,,,,,,,,,,,,,,83,total-12-5-7,total of 12 donations = 5 common + 7 less common,,,
+,,,,,,,,,,,,,,,,,,84,total-12-6-6,total of 12 donations = 6 common + 6 less common,,,
+,,,,,,,,,,,,,,,,,,85,total-12-7-5,total of 12 donations = 7 common + 5 less common,,,
+,,,,,,,,,,,,,,,,,,86,total-12-8-4,total of 12 donations = 8 common + 4 less common,,,
+,,,,,,,,,,,,,,,,,,87,total-12-9-3,total of 12 donations = 9 common + 3 less common,,,
+,,,,,,,,,,,,,,,,,,88,total-12-10-2,total of 12 donations = 10 common + 2 less common,,,
+,,,,,,,,,,,,,,,,,,89,total-12-11-1,total of 12 donations = 11 common + 1 less common,,,
+,,,,,,,,,,,,,,,,,,90,total-12-12-0,total of 12 donations = 12 common + 0 less common,,,

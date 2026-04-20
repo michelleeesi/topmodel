@@ -1,0 +1,138 @@
+personID,num_Q,difficulty_score,evidence,AorB,model_prediction,matches_actual,size_A,access_A,income_A,poverty_A,last_donation_A,dist_A,size_B,access_B,income_B,poverty_B,last_donation_B,dist_B
+D2,25,2,Because of the organization's size and level of food access.,A,B,False,4.0,1.0,2.0,2.0,4.0,0.0,3.0,2.0,5.0,1.0,8.0,1.0
+D2,33,3,"B, because of the level of food access of coffee. Right? Maybe because of the level of food access and the organization size. Well, I guess those are the same.",A,A,True,2.0,2.0,1.0,0.0,10.0,3.0,0.0,1.0,5.0,0.0,10.0,2.0
+F1,3,3,"Well, it's kinda weird because how we don't really serve organizations that are not in poverty. Mhmm. So I don't know",A,B,False,3.0,1.0,3.0,1.0,5.0,3.0,3.0,2.0,1.0,0.0,5.0,1.0
+F1,4,4,Yes. I would go with this one just because of the travel time. Okay. So I would give it to here.,A,A,True,4.0,1.0,1.0,1.0,3.0,2.0,4.0,1.0,3.0,1.0,3.0,3.0
+F1,6,3,"I'll do it to here. Yeah. So I would get it here because of the poverty rate, and this is really long.",A,B,False,1.0,0.0,4.0,1.0,10.0,1.0,4.0,0.0,1.0,2.0,4.0,1.0
+F1,7,4,Yeah. Yeah. I would still give it To a. B this Travel time.,B,B,True,3.0,0.0,2.0,1.0,12.0,1.0,2.0,1.0,1.0,4.0,7.0,2.0
+F1,8,3,"As soon as it hits an hour travel time, it it barely get volunteers Yeah. For Guess I would give it here.",A,B,False,4.0,0.0,5.0,0.0,7.0,2.0,2.0,2.0,2.0,1.0,2.0,3.0
+F1,9,3,"Everything seems to be equal. I mean, they are more in poverty. But",B,B,True,3.0,1.0,3.0,1.0,5.0,3.0,4.0,1.0,1.0,4.0,3.0,1.0
+F2,2,4,"This is tricky. But wait. This income level is, like, super high. Not a lot of poverty.",B,tie,,1.0,0.0,5.0,0.0,7.0,3.0,0.0,1.0,3.0,1.0,4.0,1.0
+F2,3,3,"There's a little bit more poverty that folks are experiencing for recipient a, so I'm gonna do a.",A,A,True,1.0,0.0,3.0,1.0,3.0,1.0,2.0,0.0,4.0,0.0,10.0,2.0
+F2,4,4,"It's tough. Mhmm. I'm, like, just always gonna go, I think, with something under half an hour. Uh-huh. But this is a huge site.",A,B,False,3.0,1.0,5.0,1.0,12.0,1.0,1.0,0.0,4.0,1.0,6.0,1.0
+F2,7,3,"Oh, this one's hard. 45. 50 clients. I'm gonna go with a.",A,A,True,4.0,2.0,3.0,1.0,8.0,0.0,1.0,0.0,5.0,0.0,9.0,2.0
+F2,14,4,"This is tricky. This place has never received food, but it's forty five minutes from the donor.",A,A,True,1.0,0.0,1.0,0.0,8.0,2.0,4.0,1.0,2.0,3.0,10.0,3.0
+R1,2,4,It's a really hard one. It's probably good towards Mhmm. Because at the income levels too for what they both were,B,B,True,1.0,0.0,5.0,1.0,9.0,2.0,3.0,0.0,3.0,1.0,4.0,1.0
+R1,4,4,This one's 500. 411. Yeah. I don't like this.,A,B,False,2.0,2.0,5.0,1.0,4.0,1.0,3.0,1.0,5.0,1.0,11.0,0.0
+R1,6,4,"I I overthink a lot too, so I know that's a problem I have.",A,A,True,0.0,2.0,0.0,4.0,1.0,0.0,2.0,0.0,3.0,1.0,6.0,2.0
+R1,11,5,"Danielle, this is hard. What's happening? This is the the the four one two interview thing. This is really difficult, just so you know.",B,A,False,2.0,0.0,3.0,0.0,10.0,1.0,1.0,1.0,4.0,1.0,8.0,3.0
+R1,13,4,"It can be dispersed. I don't know. I don't know, Joseph. I don't know.",B,B,True,4.0,1.0,2.0,0.0,11.0,0.0,2.0,2.0,0.0,0.0,10.0,2.0
+R1,16,4,I don't like this one at all.,B,A,False,4.0,2.0,3.0,0.0,11.0,2.0,0.0,2.0,5.0,0.0,0.0,2.0
+R2,1,3,"I would think a is better. It serves more people. I guess the only negative is the and, b, they have more difficulty getting accessing food",A,A,True,4.0,1.0,1.0,4.0,0.0,0.0,3.0,0.0,0.0,5.0,7.0,2.0
+R2,2,3,So this is also a funded donation. Pick b in that category because it's extremely low,B,B,True,3.0,1.0,3.0,0.0,7.0,0.0,3.0,2.0,0.0,3.0,1.0,0.0
+R2,3,4,"I mean, I guess I would pick a because it's a. There's far more people being served.",B,B,True,1.0,1.0,4.0,1.0,6.0,1.0,0.0,1.0,2.0,2.0,5.0,0.0
+R2,5,3,"So with this one, I guess maybe I I would probably pick b with that one and make it more people. They have less access.",B,B,True,0.0,1.0,5.0,0.0,1.0,0.0,4.0,1.0,0.0,4.0,10.0,0.0
+R2,8,5,"Even though it's a smaller number of people, they're extremely low. B, I guess. Well, no. Me, I guess.",A,A,True,2.0,1.0,3.0,1.0,11.0,1.0,0.0,0.0,0.0,6.0,4.0,0.0
+R2,9,5,"B? B? I guess a. Well, yeah, a. It's extremely low.",A,A,True,2.0,0.0,4.0,1.0,12.0,3.0,1.0,0.0,5.0,0.0,1.0,1.0
+R2,18,3,Let's just pick b for just because. I'm picking it too many times.,A,B,False,4.0,0.0,5.0,1.0,1.0,3.0,0.0,1.0,5.0,1.0,4.0,0.0
+R3,22,4,She's not one of you guys do this. This is difficult to choose from.,B,B,True,0.0,0.0,1.0,1.0,5.0,0.0,3.0,1.0,0.0,6.0,6.0,2.0
+R5,8,3,So this is saying that the poverty rate is zero to 10% in this area. Mhmm. But the level of food access is extremely low. That seems kind of doesn't necessarily fit,A,B,False,4.0,1.0,0.0,5.0,12.0,3.0,1.0,2.0,4.0,0.0,5.0,1.0
+R5,11,3,"I don't I don't find that a con like, I don't think that scenario would actually exist where the median income was over 100,000, but the food excess was extremely low.",A,A,True,3.0,0.0,2.0,2.0,3.0,0.0,2.0,2.0,5.0,1.0,11.0,3.0
+R5,14,4,"This is a toss-up for me. Well, ... My brain is red. I don't know. I guess I would go with ... a.",B,A,False,4.0,1.0,0.0,1.0,1.0,1.0,1.0,0.0,4.0,1.0,4.0,1.0
+R5,15,3,"A for the same reason. It's tough because they serve more. There's low food access. Been a while since they received anything, but they've never received anything.",A,A,True,0.0,1.0,4.0,1.0,1.0,0.0,1.0,1.0,3.0,1.0,2.0,3.0
+R5,16,3,"And I I'll go with b in this That's not really clear. Oh, okay. Out of all that, that's what I was worried about, actually.",A,B,False,1.0,1.0,4.0,1.0,6.0,3.0,2.0,0.0,3.0,0.0,2.0,2.0
+R5,42,4,This one's kinda tough because a lot of the factors are similar. ... The difference between serving a thousand people and 50 is pretty big. ... I guess I would go with b,B,B,True,0.0,2.0,0.0,4.0,6.0,2.0,3.0,1.0,3.0,0.0,4.0,0.0
+R7,8,4,"Oh, I took it to mean that the... Correct. I was going the other way. That zero to 10 was the most... Most poverty stricken.",A,A,True,2.0,0.0,2.0,3.0,6.0,0.0,1.0,1.0,2.0,0.0,3.0,2.0
+R7,10,2,"Interesting. Interesting. Let's go with a on this one, please.",A,B,False,0.0,2.0,2.0,1.0,4.0,0.0,2.0,0.0,0.0,4.0,7.0,1.0
+R7,15,2,Interesting. Interesting.,B,A,False,1.0,1.0,1.0,1.0,11.0,1.0,4.0,2.0,4.0,0.0,5.0,1.0
+R7,19,2,"Interesting. A, please.",A,A,True,1.0,0.0,2.0,1.0,8.0,0.0,3.0,1.0,4.0,1.0,5.0,2.0
+R7,44,3,"That's a toss-up. B, please.",A,B,False,1.0,2.0,3.0,1.0,7.0,1.0,4.0,0.0,0.0,0.0,0.0,2.0
+R8,2,3,"This seems somewhat the same to me, and so I would go with b Mhmm. Simply because of travel time.",A,A,True,0.0,0.0,4.0,0.0,7.0,0.0,2.0,2.0,1.0,2.0,6.0,3.0
+R8,18,3,"Probably wait. I would go with a because pardon me, it's a smaller",A,A,True,2.0,2.0,0.0,4.0,7.0,0.0,4.0,0.0,2.0,3.0,6.0,1.0
+R8,21,3,These are close to the same. And so I would go with a because the poverty rate's smaller with a.,A,A,True,0.0,2.0,3.0,0.0,0.0,2.0,1.0,0.0,2.0,2.0,7.0,2.0
+R8,25,2,"They're pretty much the same, so I would just go with b based on time.",B,B,True,0.0,0.0,5.0,1.0,11.0,2.0,1.0,2.0,3.0,0.0,0.0,1.0
+R8,32,2,These are pretty similar so I just base b on travel time.,A,A,True,3.0,2.0,2.0,3.0,9.0,0.0,3.0,0.0,2.0,1.0,10.0,0.0
+R8,35,3,These guys are very similar. Mhmm. So I would go with b because it is a higher level of food access.,B,B,True,3.0,2.0,3.0,0.0,4.0,2.0,3.0,2.0,4.0,0.0,12.0,2.0
+R8,41,2,These are close to the same. I would go with a based on travel time as well as number of people served.,B,A,False,2.0,2.0,5.0,1.0,9.0,1.0,1.0,1.0,5.0,1.0,9.0,0.0
+R8,42,2,So pretty similar so I would go with a based on the small organization.,B,B,True,4.0,1.0,3.0,1.0,12.0,3.0,0.0,0.0,4.0,0.0,3.0,2.0
+R8,44,3,Not travel time because it's sixty minutes. Receiv the organization size and the level of food that's in.,B,B,True,4.0,2.0,4.0,1.0,6.0,0.0,1.0,2.0,5.0,0.0,8.0,3.0
+V1,1,4,"To me, it would be helpful to really know more about the donation, like the quantity Mhmm. And a better breakdown. Mhmm. So that's that's kinda holding me back here.",B,tie,,1.0,1.0,5.0,0.0,1.0,3.0,0.0,1.0,2.0,2.0,9.0,1.0
+V1,1,4,"To me, it would be helpful to really know more about the donation, like the quantity Mhmm. And a better breakdown. Mhmm. So that's that's kinda holding me back here.",A,A,True,1.0,2.0,1.0,4.0,11.0,1.0,0.0,0.0,4.0,1.0,9.0,3.0
+V1,1,4,"To me, it would be helpful to really know more about the donation, like the quantity Mhmm. And a better breakdown. Mhmm. So that's that's kinda holding me back here.",B,B,True,4.0,1.0,1.0,1.0,10.0,0.0,3.0,2.0,2.0,1.0,4.0,0.0
+V1,3,4,I don't know. I I think I would give to a.,A,A,True,4.0,1.0,1.0,3.0,11.0,0.0,3.0,0.0,0.0,2.0,2.0,2.0
+V1,3,4,I don't know. I I think I would give to a.,A,B,False,0.0,1.0,1.0,1.0,8.0,2.0,0.0,2.0,0.0,6.0,12.0,3.0
+V1,3,4,I don't know. I I think I would give to a.,A,A,True,4.0,1.0,2.0,1.0,2.0,3.0,3.0,0.0,3.0,1.0,2.0,3.0
+V1,5,4,"I might give it a b. It's really close, though.",B,tie,,1.0,2.0,4.0,0.0,9.0,3.0,2.0,2.0,3.0,0.0,12.0,2.0
+V1,5,4,"I might give it a b. It's really close, though.",B,A,False,2.0,2.0,1.0,0.0,8.0,0.0,2.0,0.0,3.0,1.0,12.0,0.0
+V1,9,4,"I wanna say it's I think b, because they serve more people. Mhmm. And I don't know. Even though their poverty rate is a lot less.",A,B,False,2.0,2.0,1.0,2.0,11.0,1.0,2.0,1.0,0.0,2.0,9.0,1.0
+V1,9,4,"I wanna say it's I think b, because they serve more people. Mhmm. And I don't know. Even though their poverty rate is a lot less.",A,B,False,1.0,0.0,3.0,1.0,10.0,2.0,0.0,0.0,4.0,0.0,2.0,2.0
+V1,10,5,It's a tough one. These are really equal too. We've given a lot more to recipient a. Mhmm. But this is the first time for b,A,A,True,2.0,1.0,1.0,4.0,4.0,3.0,0.0,0.0,4.0,1.0,6.0,1.0
+V1,10,5,It's a tough one. These are really equal too. We've given a lot more to recipient a. Mhmm. But this is the first time for b,A,A,True,1.0,2.0,0.0,2.0,12.0,0.0,1.0,2.0,4.0,0.0,7.0,0.0
+V1,15,3,"I mean, it's been eleven weeks. And you know what? Yeah. I'd still give it a b.",A,A,True,4.0,1.0,3.0,1.0,2.0,0.0,3.0,0.0,2.0,1.0,2.0,3.0
+V1,21,4,That kinda sticks out. I don't know why that is.,A,A,True,3.0,2.0,1.0,4.0,7.0,2.0,1.0,1.0,4.0,0.0,3.0,3.0
+V1,26,4,"Tough. Mhmm. Yeah. I mean, we've given to them four times nine weeks ago. The other is never.",B,A,False,3.0,0.0,2.0,3.0,2.0,1.0,2.0,0.0,2.0,2.0,10.0,1.0
+V3,6,5,So it's kinda hard to use the travel time to say fair versus not fair... I I think I think that's tough driving more than two hours to donate something.,B,A,False,3.0,0.0,3.0,0.0,8.0,0.0,3.0,2.0,5.0,1.0,8.0,1.0
+V3,7,4,This one's tough for that same reason of the travel time... I guess I'm gonna go with b and hope somebody can drive that far.,B,B,True,1.0,2.0,2.0,2.0,2.0,3.0,2.0,0.0,4.0,0.0,9.0,0.0
+V3,9,3,"I kinda worry here because there's fewer than 50 people. And if you have a, like, a truckload of potatoes that they couldn't use it all",A,A,True,3.0,0.0,0.0,6.0,5.0,0.0,1.0,2.0,2.0,2.0,5.0,2.0
+V3,10,3,"I can see pros on both sides. So one doesn't completely stand out, but to me, the travel time makes the biggest difference",B,A,False,0.0,2.0,4.0,1.0,0.0,0.0,3.0,0.0,3.0,1.0,10.0,1.0
+V3,17,3,"I don't understand how that could be. It's, like, so little income, but nobody's has a very low poverty rate. But okay.",A,A,True,1.0,1.0,1.0,1.0,6.0,0.0,4.0,1.0,4.0,0.0,12.0,2.0
+V3,18,3,This one's hard because a higher income level and a lower poverty rate. And that just must be those discrepancies and averages,B,B,True,1.0,1.0,1.0,0.0,1.0,1.0,3.0,0.0,3.0,1.0,6.0,0.0
+V3,23,3,"Ugh. It would go even though this is a small group, I would go with them.",B,B,True,2.0,0.0,5.0,0.0,10.0,2.0,2.0,2.0,2.0,3.0,1.0,2.0
+V3,24,3,"even though the income and poverty makes me wanna say this one is more deserving, the fact that it has such a large population or such a small population",B,A,False,4.0,1.0,5.0,0.0,0.0,0.0,1.0,2.0,4.0,1.0,4.0,2.0
+V3,32,3,I think if this had been somewhere else I would be more likely to go because of all these people. But the fact that they're that this is the one that drives my decision for AM.,B,B,True,2.0,0.0,5.0,0.0,5.0,2.0,3.0,2.0,0.0,5.0,6.0,2.0
+V3,34,4,This one's hard because that difference between the drive time... probably contradicting myself all the time. Driving is important. It's not important.,B,B,True,1.0,1.0,4.0,1.0,11.0,3.0,4.0,1.0,3.0,0.0,7.0,0.0
+V5,4,4,"it's just so hard to some of these are hard because Mhmm. The income level on this one is a lot less, but that serves more people.",B,B,True,2.0,2.0,3.0,1.0,2.0,2.0,0.0,1.0,0.0,5.0,6.0,3.0
+V5,6,5,This kinda gets hard sometimes... I think I'm gonna go with b even though... no. I think I'm gonna go with a. A.,A,A,True,0.0,0.0,0.0,4.0,8.0,0.0,2.0,2.0,3.0,0.0,0.0,2.0
+V5,7,3,"Yeah. Although they get more donations. This one got food two weeks ago, and the other one got food twelve weeks more often too.",A,B,False,1.0,2.0,1.0,2.0,9.0,3.0,2.0,1.0,1.0,4.0,12.0,2.0
+V5,10,3,"It is. The only difference is the number of people at SURZ, and I think because of that, maybe a would be",A,A,True,3.0,1.0,3.0,0.0,6.0,1.0,2.0,0.0,3.0,0.0,8.0,1.0
+V5,12,3,I was gonna go with b on this one because the income level is so low... Okay. I'll go with a. I'll go with a.,A,A,True,4.0,1.0,3.0,0.0,4.0,0.0,2.0,0.0,4.0,1.0,4.0,0.0
+V5,20,4,"This is hard because a hasn't had a donation for nine weeks while b had it one last week, and the income levels are relatively",B,B,True,3.0,2.0,3.0,0.0,2.0,2.0,1.0,2.0,1.0,1.0,8.0,2.0
+V5,22,3,"That's a hard one because it's has a higher income level, but... b, they had their last donation was eleven weeks ago",B,A,False,1.0,1.0,5.0,0.0,10.0,3.0,2.0,0.0,3.0,1.0,8.0,2.0
+V5,25,4,That's a toughie because a has never gotten any donations at all.,B,B,True,0.0,1.0,2.0,2.0,6.0,3.0,0.0,2.0,5.0,1.0,11.0,0.0
+V5,26,4,"Well, that's hard, though, because b does has an extremely low in their income level so much. What do you think?",A,A,True,1.0,2.0,1.0,4.0,9.0,3.0,3.0,0.0,5.0,1.0,5.0,2.0
+V5,28,3,"This is a hard one. And how even in high income areas, there are people who need food and things.",B,B,True,2.0,0.0,5.0,0.0,0.0,1.0,2.0,2.0,2.0,1.0,12.0,3.0
+V5,32,3,"That's a hard one. What do you think? They got a donation sooner, but the poverty rate's a lot higher.",B,B,True,3.0,0.0,5.0,1.0,4.0,1.0,4.0,0.0,4.0,1.0,12.0,0.0
+V5,34,3,"This is so hard because, you know, there's only 50 people, but they've received less of a donation.",A,A,True,3.0,1.0,3.0,1.0,10.0,3.0,1.0,2.0,3.0,1.0,7.0,0.0
+V5,36,3,"It's like you're playing god. There's more people in bee... but the income level is higher, and the poverty rate is much lower.",B,B,True,1.0,2.0,4.0,0.0,9.0,2.0,2.0,2.0,0.0,0.0,9.0,0.0
+V5,38,3,I'm gonna go with a. This is a hard one too.,A,A,True,3.0,1.0,0.0,7.0,9.0,2.0,1.0,1.0,1.0,4.0,10.0,2.0
+V5,39,4,"I gave him a hint. B. That's what I was tending towards because they got a well, it's not even that different",B,A,False,0.0,2.0,1.0,2.0,6.0,1.0,4.0,2.0,4.0,0.0,0.0,1.0
+V5,41,3,"Would be lower poverty or higher poverty rate, lower income... they didn't get their food for eleven weeks, but they got a higher share",B,A,False,0.0,2.0,1.0,0.0,11.0,3.0,0.0,2.0,2.0,2.0,11.0,2.0
+V5,42,3,I don't know. They got nine donations. They got five. What's your thought on that one?,A,A,True,2.0,1.0,3.0,0.0,7.0,1.0,3.0,0.0,4.0,1.0,2.0,3.0
+V6,2,4,I could have easily chosen the other one Mhmm. They don't get less common high demand items very often.,A,A,True,4.0,2.0,2.0,0.0,0.0,0.0,0.0,1.0,2.0,3.0,9.0,0.0
+V6,5,4,Let me just tell you that there is a problem here. It says their last donation was eleven weeks ago,A,A,True,2.0,2.0,4.0,0.0,11.0,2.0,4.0,2.0,3.0,0.0,0.0,3.0
+V6,6,3,"you know, I'm gonna contradict myself a million times. So these are the same. Who the hell wants to drive an hour for common donation?",A,A,True,2.0,2.0,1.0,4.0,0.0,0.0,0.0,1.0,2.0,2.0,11.0,3.0
+V6,8,3,"Now I'm gonna contradict myself, and I'm go with b a.",A,B,False,3.0,0.0,1.0,4.0,4.0,2.0,2.0,0.0,1.0,1.0,7.0,0.0
+V6,9,4,I'm gonna make somebody drive an hour because it's a thousand clients. It is a higher rate of poverty. No. It's not. Sorry.,B,B,True,1.0,2.0,1.0,3.0,6.0,2.0,4.0,1.0,1.0,2.0,11.0,3.0
+V6,11,4,"So this one to me is six and one half dozen in another. On the one hand, a has not received a donation in six six weeks.",A,B,False,3.0,2.0,5.0,0.0,2.0,3.0,4.0,2.0,3.0,0.0,2.0,3.0
+V6,12,4,"I don't know. Maybe it would be better to give them well, theoretically, this is all stuff that goes bad.",A,B,False,3.0,1.0,2.0,2.0,6.0,1.0,0.0,2.0,4.0,1.0,0.0,0.0
+V6,13,3,"oh, no. It's a lower rate of poverty. These are more impoverished, but close. Whatever.",B,B,True,4.0,0.0,4.0,1.0,6.0,1.0,0.0,2.0,0.0,4.0,10.0,1.0
+V6,22,3,"Right? You know, like, it's it they're not there are too many factors to and then there are the factors that are unknown.",A,A,True,2.0,0.0,5.0,1.0,3.0,1.0,1.0,2.0,5.0,0.0,5.0,2.0
+V6,23,3,"This is a big differentiating thing, and that is a big differentiating thing. So you go with I thought yeah.",B,A,False,0.0,2.0,3.0,0.0,6.0,0.0,3.0,2.0,4.0,0.0,8.0,3.0
+V7,3,3,"Bully, I guess b, because they've never received a donation even though their property rates a little bit lower.",A,A,True,1.0,1.0,3.0,0.0,4.0,1.0,0.0,0.0,4.0,1.0,12.0,1.0
+V7,5,3,Probably being because their poverty rate is higher,B,B,True,2.0,2.0,5.0,1.0,4.0,1.0,3.0,1.0,2.0,3.0,8.0,2.0
+V7,9,3,"Probably a, because their income levels seem to be less than the poverty rate's higher.",B,A,False,2.0,2.0,1.0,0.0,1.0,0.0,3.0,2.0,3.0,1.0,6.0,1.0
+V7,11,4,,B,B,True,1.0,2.0,4.0,0.0,2.0,1.0,3.0,1.0,1.0,3.0,4.0,0.0
+V7,12,4,,B,B,True,2.0,0.0,4.0,1.0,7.0,1.0,3.0,2.0,1.0,4.0,4.0,1.0
+V7,13,4,,B,A,False,1.0,0.0,1.0,1.0,2.0,0.0,0.0,0.0,3.0,0.0,0.0,1.0
+V7,14,4,,A,A,True,1.0,2.0,1.0,0.0,1.0,2.0,4.0,0.0,3.0,0.0,7.0,3.0
+V7,15,4,,A,A,True,2.0,1.0,1.0,2.0,6.0,2.0,2.0,1.0,5.0,1.0,11.0,3.0
+V7,16,4,,A,A,True,0.0,0.0,3.0,1.0,7.0,3.0,1.0,0.0,4.0,0.0,6.0,1.0
+V7,17,4,,B,B,True,1.0,1.0,4.0,0.0,11.0,2.0,0.0,1.0,2.0,1.0,2.0,0.0
+V7,18,4,,A,A,True,3.0,2.0,1.0,2.0,1.0,3.0,4.0,0.0,4.0,1.0,12.0,0.0
+V7,19,4,,A,A,True,2.0,0.0,0.0,6.0,5.0,3.0,4.0,0.0,4.0,1.0,1.0,3.0
+V7,20,4,,A,B,False,4.0,2.0,2.0,2.0,12.0,1.0,3.0,2.0,2.0,3.0,12.0,0.0
+V7,21,4,,A,B,False,0.0,2.0,2.0,0.0,10.0,2.0,3.0,1.0,1.0,1.0,4.0,0.0
+V7,22,4,,A,A,True,3.0,2.0,2.0,3.0,7.0,2.0,2.0,2.0,1.0,0.0,10.0,0.0
+V7,23,4,,B,B,True,0.0,2.0,5.0,0.0,2.0,3.0,2.0,2.0,3.0,1.0,5.0,2.0
+V7,24,4,,B,B,True,0.0,0.0,2.0,2.0,11.0,0.0,0.0,0.0,0.0,5.0,9.0,1.0
+V7,25,4,,A,A,True,2.0,1.0,2.0,1.0,6.0,1.0,3.0,0.0,4.0,0.0,2.0,2.0
+V7,26,4,,A,A,True,1.0,2.0,0.0,5.0,11.0,3.0,2.0,0.0,0.0,2.0,1.0,1.0
+V7,27,4,,A,A,True,1.0,2.0,4.0,1.0,8.0,0.0,1.0,0.0,4.0,0.0,7.0,3.0
+V7,28,4,,A,A,True,2.0,2.0,5.0,0.0,7.0,1.0,0.0,0.0,3.0,1.0,9.0,1.0
+V7,29,4,,A,A,True,4.0,1.0,4.0,0.0,0.0,1.0,1.0,0.0,4.0,1.0,9.0,1.0
+V7,30,4,,B,B,True,0.0,0.0,1.0,1.0,1.0,2.0,0.0,1.0,1.0,4.0,9.0,0.0
+V7,31,4,,B,A,False,1.0,1.0,1.0,3.0,7.0,3.0,4.0,1.0,2.0,2.0,0.0,0.0
+V7,32,4,,B,B,True,1.0,1.0,2.0,2.0,10.0,0.0,0.0,1.0,2.0,3.0,6.0,0.0
+V7,33,4,,B,B,True,4.0,0.0,4.0,1.0,0.0,0.0,0.0,1.0,2.0,1.0,0.0,3.0
+V7,34,4,,B,tie,,3.0,2.0,2.0,1.0,8.0,0.0,4.0,1.0,0.0,1.0,5.0,2.0
+V7,35,4,,A,A,True,2.0,0.0,1.0,4.0,1.0,2.0,4.0,0.0,1.0,0.0,1.0,2.0
+V7,36,4,,A,A,True,2.0,1.0,5.0,1.0,12.0,0.0,0.0,0.0,3.0,0.0,11.0,3.0
+V7,37,4,,A,A,True,1.0,2.0,1.0,1.0,0.0,0.0,4.0,2.0,1.0,0.0,6.0,3.0
+V7,38,4,,B,B,True,1.0,1.0,5.0,0.0,3.0,3.0,3.0,2.0,5.0,1.0,12.0,0.0
+V7,39,4,,B,B,True,4.0,1.0,4.0,1.0,0.0,0.0,3.0,2.0,2.0,3.0,10.0,0.0
+V7,40,4,,A,A,True,2.0,2.0,4.0,1.0,4.0,2.0,1.0,1.0,4.0,0.0,12.0,1.0
+V7,41,4,,A,A,True,0.0,2.0,2.0,2.0,11.0,2.0,1.0,1.0,3.0,0.0,11.0,0.0
+V7,42,4,,B,B,True,0.0,0.0,2.0,3.0,11.0,1.0,2.0,0.0,0.0,5.0,10.0,3.0
+V7,43,4,,B,A,False,3.0,1.0,2.0,2.0,9.0,1.0,1.0,0.0,3.0,0.0,0.0,1.0
+V7,44,4,,A,A,True,4.0,0.0,0.0,3.0,5.0,1.0,1.0,0.0,5.0,0.0,0.0,0.0
+V7,45,4,,B,B,True,0.0,1.0,4.0,1.0,7.0,2.0,0.0,0.0,0.0,6.0,11.0,2.0

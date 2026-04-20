@@ -1,0 +1,540 @@
+personID,participant_speaker,num_Q,choice,conflicted,difficulty_score,evidence
+D2,SPEAKER 2,1,B,False,2,
+D2,SPEAKER 2,2,B,False,1,
+D2,SPEAKER 2,3,B,False,1,
+D2,SPEAKER 2,4,A,False,1,
+D2,SPEAKER 2,5,B,False,1,
+D2,SPEAKER 2,6,B,False,1,
+D2,SPEAKER 2,7,B,False,1,
+D2,SPEAKER 2,8,B,False,1,
+D2,SPEAKER 2,9,B,False,1,
+D2,SPEAKER 2,10,B,False,1,
+D2,SPEAKER 2,11,A,False,1,
+D2,SPEAKER 2,12,B,False,1,
+D2,SPEAKER 2,13,A,False,1,
+D2,SPEAKER 2,14,A,False,1,
+D2,SPEAKER 2,15,A,False,1,
+D2,SPEAKER 2,16,B,False,1,
+D2,SPEAKER 2,17,B,False,1,
+D2,SPEAKER 2,18,B,False,1,
+D2,SPEAKER 2,19,B,False,1,
+D2,SPEAKER 2,20,B,False,1,
+D2,SPEAKER 2,21,A,False,1,
+D2,SPEAKER 2,22,A,False,1,
+D2,SPEAKER 2,23,B,False,1,
+D2,SPEAKER 2,24,A,False,1,
+D2,SPEAKER 2,25,A,True,2,Because of the organization's size and level of food access.
+D2,SPEAKER 2,26,B,False,1,
+D2,SPEAKER 2,27,A,False,1,
+D2,SPEAKER 2,28,B,False,1,
+D2,SPEAKER 2,29,B,False,1,
+D2,SPEAKER 2,30,A,False,1,
+D2,SPEAKER 2,31,A,False,1,
+D2,SPEAKER 2,32,A,False,1,
+D2,SPEAKER 2,33,B,True,3,"B, because of the level of food access of coffee. Right? Maybe because of the level of food access and the organization size. Well, I guess those are the same."
+D2,SPEAKER 2,34,A,False,1,
+D2,SPEAKER 2,35,A,False,1,
+D2,SPEAKER 2,36,B,False,1,
+D2,SPEAKER 2,37,A,False,1,
+D2,SPEAKER 2,38,B,False,1,
+D2,SPEAKER 2,39,A,False,1,
+D2,SPEAKER 2,40,A,False,1,
+D2,SPEAKER 2,41,B,False,1,
+D2,SPEAKER 2,42,B,False,1,
+D2,SPEAKER 2,43,A,False,1,
+D2,SPEAKER 2,44,B,False,1,
+D2,SPEAKER 2,45,A,False,1,
+F1,SPEAKER 2,1,A,False,1,
+F1,SPEAKER 2,2,B,False,2,
+F1,SPEAKER 2,3,A,True,3,"Well, it's kinda weird because how we don't really serve organizations that are not in poverty. Mhmm. So I don't know"
+F1,SPEAKER 2,4,unclear,True,4,Yes. I would go with this one just because of the travel time. Okay. So I would give it to here.
+F1,SPEAKER 2,5,A,False,2,
+F1,SPEAKER 2,6,A,True,3,"I'll do it to here. Yeah. So I would get it here because of the poverty rate, and this is really long."
+F1,SPEAKER 2,7,B,True,4,Yeah. Yeah. I would still give it To a. B this Travel time.
+F1,SPEAKER 2,8,B,True,3,"As soon as it hits an hour travel time, it it barely get volunteers Yeah. For Guess I would give it here."
+F1,SPEAKER 2,9,unclear,True,3,"Everything seems to be equal. I mean, they are more in poverty. But"
+F1,SPEAKER 2,10,A,False,2,
+F1,SPEAKER 2,11,B,False,2,
+F1,SPEAKER 2,12,B,False,2,I'm do it here. They have not received. They've only received one.
+F1,SPEAKER 2,13,unclear,False,2,
+F1,SPEAKER 2,14,unclear,False,2,
+F1,SPEAKER 2,15,unclear,False,2,
+F2,SPEAKER 2,1,A,False,1,
+F2,SPEAKER 2,2,B,True,4,"This is tricky. But wait. This income level is, like, super high. Not a lot of poverty."
+F2,SPEAKER 2,3,A,True,3,"There's a little bit more poverty that folks are experiencing for recipient a, so I'm gonna do a."
+F2,SPEAKER 2,4,B,True,4,"It's tough. Mhmm. I'm, like, just always gonna go, I think, with something under half an hour. Uh-huh. But this is a huge site."
+F2,SPEAKER 2,5,A,False,1,
+F2,SPEAKER 2,6,B,False,1,
+F2,SPEAKER 2,7,A,True,3,"Oh, this one's hard. 45. 50 clients. I'm gonna go with a."
+F2,SPEAKER 2,8,A,False,1,
+F2,SPEAKER 2,9,B,False,1,
+F2,SPEAKER 2,10,A,False,2,
+F2,SPEAKER 2,11,A,False,2,
+F2,SPEAKER 2,12,A,False,1,
+F2,SPEAKER 2,13,B,False,2,
+F2,SPEAKER 2,14,B,True,4,"This is tricky. This place has never received food, but it's forty five minutes from the donor."
+F2,SPEAKER 2,15,A,False,2,
+F2,SPEAKER 2,16,A,False,2,
+F2,SPEAKER 2,17,A,False,2,
+F2,SPEAKER 2,18,B,False,2,
+F2,SPEAKER 2,19,A,False,2,
+F3,SPEAKER 2,1,A,False,3,
+F3,SPEAKER 2,2,A,False,2,
+F3,SPEAKER 2,3,B,False,3,
+F3,SPEAKER 2,4,B,False,2,
+F3,SPEAKER 2,5,A,True,5,"this is a tough I mean, these are pretty equal"
+F3,SPEAKER 2,6,A,False,3,
+F3,SPEAKER 2,7,A,True,4,I know I'm contradicting myself.
+F3,SPEAKER 2,8,A,False,2,
+F3,SPEAKER 2,9,B,False,2,
+F3,SPEAKER 2,10,B,True,4,"It's really a hard decision to make on this one. Again, it would be I would look for another factor that's not here"
+F3,SPEAKER 2,11,A,False,3,
+F3,SPEAKER 2,12,A,False,1,
+F3,SPEAKER 2,13,B,False,2,
+F3,SPEAKER 2,14,B,False,1,
+F3,SPEAKER 2,15,A,False,2,
+F3,SPEAKER 2,16,B,True,4,"Even though eleven weeks is is, like, setting off my alarm bells here, I think that I'm I'm making some assumptions"
+F3,SPEAKER 2,17,B,False,2,
+F3,SPEAKER 2,18,A,False,2,
+F3,SPEAKER 2,19,A,False,2,
+F3,SPEAKER 2,20,A,False,2,
+F3,SPEAKER 2,21,A,False,1,
+F3,SPEAKER 2,22,A,False,2,
+F3,SPEAKER 2,23,B,True,4,I would probably want more information to make this decision.
+F3,SPEAKER 2,24,A,False,1,
+F3,SPEAKER 2,25,B,False,1,
+F3,SPEAKER 2,26,A,False,2,
+F3,SPEAKER 2,27,B,False,2,
+F3,SPEAKER 2,28,A,False,1,
+F3,SPEAKER 2,29,B,False,1,
+F3,SPEAKER 2,30,A,True,4,This is a one that Oh. Is a dilemma. You've got 500 people versus 50.
+F3,SPEAKER 2,31,unclear,True,5,"the 500 recipient a should get it even though they've had none... nine and two, you can draw on equivalency."
+R1,SPEAKER 1,1,A,False,2,
+R1,SPEAKER 1,2,B,True,4,It's a really hard one. It's probably good towards Mhmm. Because at the income levels too for what they both were
+R1,SPEAKER 1,3,B,False,2,
+R1,SPEAKER 1,4,A,True,4,This one's 500. 411. Yeah. I don't like this.
+R1,SPEAKER 1,5,A,False,2,
+R1,SPEAKER 1,6,A,True,4,"I I overthink a lot too, so I know that's a problem I have."
+R1,SPEAKER 1,7,B,False,3,
+R1,SPEAKER 1,8,A,False,2,
+R1,SPEAKER 1,9,B,False,2,
+R1,SPEAKER 1,10,B,False,2,
+R1,SPEAKER 1,11,A,True,5,"Danielle, this is hard. What's happening? This is the the the four one two interview thing. This is really difficult, just so you know."
+R1,SPEAKER 1,12,A,False,2,
+R1,SPEAKER 1,13,B,True,4,"It can be dispersed. I don't know. I don't know, Joseph. I don't know."
+R1,SPEAKER 1,14,A,False,3,
+R1,SPEAKER 1,15,A,False,2,
+R1,SPEAKER 1,16,B,True,4,I don't like this one at all.
+R1,SPEAKER 1,17,B,False,1,
+R2,SPEAKER 2,1,A,True,3,"I would think a is better. It serves more people. I guess the only negative is the and, b, they have more difficulty getting accessing food"
+R2,SPEAKER 2,2,B,True,3,So this is also a funded donation. Pick b in that category because it's extremely low
+R2,SPEAKER 2,3,A,True,4,"I mean, I guess I would pick a because it's a. There's far more people being served."
+R2,SPEAKER 2,4,A,False,2,
+R2,SPEAKER 2,5,B,True,3,"So with this one, I guess maybe I I would probably pick b with that one and make it more people. They have less access."
+R2,SPEAKER 2,6,A,False,2,
+R2,SPEAKER 2,7,A,False,1,
+R2,SPEAKER 2,8,B,True,5,"Even though it's a smaller number of people, they're extremely low. B, I guess. Well, no. Me, I guess."
+R2,SPEAKER 2,9,A,True,5,"B? B? I guess a. Well, yeah, a. It's extremely low."
+R2,SPEAKER 2,10,B,False,2,
+R2,SPEAKER 2,11,A,False,1,
+R2,SPEAKER 2,12,A,False,1,
+R2,SPEAKER 2,13,B,False,1,
+R2,SPEAKER 2,14,A,False,1,
+R2,SPEAKER 2,15,A,False,2,
+R2,SPEAKER 2,16,A,False,2,
+R2,SPEAKER 2,17,A,False,1,
+R2,SPEAKER 2,18,B,True,3,Let's just pick b for just because. I'm picking it too many times.
+R2,SPEAKER 2,19,B,False,1,
+R2,SPEAKER 2,20,A,False,1,
+R3,SPEAKER 2,1,B,False,1,
+R3,SPEAKER 2,2,A,False,1,
+R3,SPEAKER 2,3,A,False,1,
+R3,SPEAKER 2,4,B,False,1,
+R3,SPEAKER 2,5,B,False,1,
+R3,SPEAKER 2,6,B,False,1,
+R3,SPEAKER 2,7,B,False,1,
+R3,SPEAKER 2,8,A,False,1,
+R3,SPEAKER 2,9,B,False,1,
+R3,SPEAKER 2,10,A,False,1,
+R3,SPEAKER 2,11,A,False,1,
+R3,SPEAKER 2,12,A,False,1,
+R3,SPEAKER 2,13,A,False,1,
+R3,SPEAKER 2,14,A,False,1,
+R3,SPEAKER 2,15,A,False,1,
+R3,SPEAKER 2,16,B,False,1,
+R3,SPEAKER 2,17,A,False,1,
+R3,SPEAKER 2,18,A,False,1,
+R3,SPEAKER 2,19,B,False,1,
+R3,SPEAKER 2,20,A,False,1,
+R3,SPEAKER 2,21,B,False,2,
+R3,SPEAKER 2,22,A,True,4,She's not one of you guys do this. This is difficult to choose from.
+R3,SPEAKER 2,23,B,False,1,
+R3,SPEAKER 2,24,B,False,1,
+R3,SPEAKER 2,25,B,False,1,
+R3,SPEAKER 2,26,B,False,1,
+R3,SPEAKER 2,27,B,False,1,
+R3,SPEAKER 2,28,B,False,1,
+R3,SPEAKER 2,29,B,False,1,
+R3,SPEAKER 2,30,B,False,1,
+R3,SPEAKER 2,31,B,False,1,
+R3,SPEAKER 2,32,B,False,1,
+R3,SPEAKER 2,33,A,False,1,
+R3,SPEAKER 2,34,B,False,1,
+R3,SPEAKER 2,35,B,False,1,
+R3,SPEAKER 2,36,A,False,1,
+R3,SPEAKER 2,37,A,False,1,
+R3,SPEAKER 2,38,A,False,1,
+R3,SPEAKER 2,39,B,False,1,
+R3,SPEAKER 2,40,B,False,1,
+R3,SPEAKER 2,41,B,False,1,
+R3,SPEAKER 2,42,A,False,1,
+R3,SPEAKER 2,43,A,False,1,
+R3,SPEAKER 2,44,A,False,1,
+R3,SPEAKER 2,45,B,False,1,
+R5,SPEAKER 2,1,A,False,1,
+R5,SPEAKER 2,2,A,False,1,
+R5,SPEAKER 2,3,A,False,1,
+R5,SPEAKER 2,4,A,False,1,
+R5,SPEAKER 2,5,A,False,1,
+R5,SPEAKER 2,6,A,False,1,
+R5,SPEAKER 2,7,A,False,1,
+R5,SPEAKER 2,8,A,True,3,So this is saying that the poverty rate is zero to 10% in this area. Mhmm. But the level of food access is extremely low. That seems kind of doesn't necessarily fit
+R5,SPEAKER 2,9,A,False,1,
+R5,SPEAKER 2,10,A,False,1,
+R5,SPEAKER 2,11,A,True,3,"I don't I don't find that a con like, I don't think that scenario would actually exist where the median income was over 100,000, but the food excess was extremely low."
+R5,SPEAKER 2,12,B,False,2,
+R5,SPEAKER 2,13,A,False,1,
+R5,SPEAKER 2,14,A,True,4,"This is a toss-up for me. Well, ... My brain is red. I don't know. I guess I would go with ... a."
+R5,SPEAKER 2,15,A,True,3,"A for the same reason. It's tough because they serve more. There's low food access. Been a while since they received anything, but they've never received anything."
+R5,SPEAKER 2,16,B,True,3,"And I I'll go with b in this That's not really clear. Oh, okay. Out of all that, that's what I was worried about, actually."
+R5,SPEAKER 2,17,B,False,1,
+R5,SPEAKER 2,18,A,False,1,
+R5,SPEAKER 2,19,A,False,1,
+R5,SPEAKER 2,20,B,False,1,
+R5,SPEAKER 2,21,A,False,1,
+R5,SPEAKER 2,22,A,False,1,
+R5,SPEAKER 2,23,B,False,1,
+R5,SPEAKER 2,24,A,False,1,
+R5,SPEAKER 2,25,A,False,1,
+R5,SPEAKER 2,26,B,False,1,
+R5,SPEAKER 2,27,A,False,1,
+R5,SPEAKER 2,28,A,False,1,
+R5,SPEAKER 2,29,B,False,1,
+R5,SPEAKER 2,30,A,False,1,
+R5,SPEAKER 2,31,A,False,1,
+R5,SPEAKER 2,32,A,False,1,
+R5,SPEAKER 2,33,A,False,1,
+R5,SPEAKER 2,34,B,False,1,
+R5,SPEAKER 2,35,A,False,1,
+R5,SPEAKER 2,36,A,False,1,
+R5,SPEAKER 2,37,A,False,1,
+R5,SPEAKER 2,38,A,False,1,
+R5,SPEAKER 2,39,B,False,1,
+R5,SPEAKER 2,40,B,False,1,
+R5,SPEAKER 2,41,B,False,1,
+R5,SPEAKER 2,42,B,True,4,This one's kinda tough because a lot of the factors are similar. ... The difference between serving a thousand people and 50 is pretty big. ... I guess I would go with b
+R5,SPEAKER 2,43,B,False,1,
+R5,SPEAKER 2,44,B,False,1,
+R5,SPEAKER 2,45,B,False,1,
+R7,SPEAKER 2,1,A,False,2,
+R7,SPEAKER 2,2,A,False,2,
+R7,SPEAKER 2,3,B,False,2,
+R7,SPEAKER 2,4,B,False,1,
+R7,SPEAKER 2,5,A,False,1,
+R7,SPEAKER 2,6,B,False,1,
+R7,SPEAKER 2,7,A,False,1,
+R7,SPEAKER 2,8,A,True,4,"Oh, I took it to mean that the... Correct. I was going the other way. That zero to 10 was the most... Most poverty stricken."
+R7,SPEAKER 2,9,B,False,1,
+R7,SPEAKER 2,10,A,True,2,"Interesting. Interesting. Let's go with a on this one, please."
+R7,SPEAKER 2,11,A,False,1,
+R7,SPEAKER 2,12,B,False,1,
+R7,SPEAKER 2,13,B,False,1,
+R7,SPEAKER 2,14,B,False,1,
+R7,SPEAKER 2,15,B,True,2,Interesting. Interesting.
+R7,SPEAKER 2,16,B,False,1,
+R7,SPEAKER 2,17,A,False,1,
+R7,SPEAKER 2,18,B,False,1,
+R7,SPEAKER 2,19,A,True,2,"Interesting. A, please."
+R7,SPEAKER 2,20,B,False,1,
+R7,SPEAKER 2,21,B,False,1,
+R7,SPEAKER 2,22,B,False,1,
+R7,SPEAKER 2,23,A,False,1,
+R7,SPEAKER 2,24,B,False,1,
+R7,SPEAKER 2,25,B,False,1,
+R7,SPEAKER 2,26,A,False,1,
+R7,SPEAKER 2,27,B,False,1,
+R7,SPEAKER 2,28,B,False,1,
+R7,SPEAKER 2,29,A,False,1,
+R7,SPEAKER 2,30,A,False,1,
+R7,SPEAKER 2,31,B,False,1,
+R7,SPEAKER 2,32,B,False,1,
+R7,SPEAKER 2,33,A,False,1,
+R7,SPEAKER 2,34,A,False,1,
+R7,SPEAKER 2,35,B,False,1,
+R7,SPEAKER 2,36,A,False,1,
+R7,SPEAKER 2,37,A,False,1,
+R7,SPEAKER 2,38,B,False,1,
+R7,SPEAKER 2,39,A,False,1,
+R7,SPEAKER 2,40,B,False,1,
+R7,SPEAKER 2,41,A,False,1,
+R7,SPEAKER 2,42,A,False,1,
+R7,SPEAKER 2,43,A,False,1,
+R7,SPEAKER 2,44,B,True,3,"That's a toss-up. B, please."
+R7,SPEAKER 2,45,A,False,1,
+R8,SPEAKER 2,1,B,False,1,
+R8,SPEAKER 2,2,B,True,3,"This seems somewhat the same to me, and so I would go with b Mhmm. Simply because of travel time."
+R8,SPEAKER 2,3,B,False,1,
+R8,SPEAKER 2,4,A,False,1,
+R8,SPEAKER 2,5,B,False,1,
+R8,SPEAKER 2,6,B,False,1,
+R8,SPEAKER 2,7,A,False,1,
+R8,SPEAKER 2,8,B,False,1,
+R8,SPEAKER 2,9,A,False,1,
+R8,SPEAKER 2,10,A,False,1,
+R8,SPEAKER 2,11,A,False,1,
+R8,SPEAKER 2,12,A,False,1,
+R8,SPEAKER 2,13,B,False,2,
+R8,SPEAKER 2,14,A,False,1,
+R8,SPEAKER 2,15,B,False,1,
+R8,SPEAKER 2,16,A,False,2,
+R8,SPEAKER 2,17,B,False,1,
+R8,SPEAKER 2,18,A,True,3,"Probably wait. I would go with a because pardon me, it's a smaller"
+R8,SPEAKER 2,19,B,False,1,
+R8,SPEAKER 2,20,A,False,1,
+R8,SPEAKER 2,21,A,True,3,These are close to the same. And so I would go with a because the poverty rate's smaller with a.
+R8,SPEAKER 2,22,A,False,1,
+R8,SPEAKER 2,23,B,False,1,
+R8,SPEAKER 2,24,B,False,1,
+R8,SPEAKER 2,25,B,True,2,"They're pretty much the same, so I would just go with b based on time."
+R8,SPEAKER 2,26,B,False,1,
+R8,SPEAKER 2,27,A,False,1,
+R8,SPEAKER 2,28,B,False,1,
+R8,SPEAKER 2,29,A,False,1,
+R8,SPEAKER 2,30,A,False,1,
+R8,SPEAKER 2,31,B,False,1,
+R8,SPEAKER 2,32,B,True,2,These are pretty similar so I just base b on travel time.
+R8,SPEAKER 2,33,B,False,1,
+R8,SPEAKER 2,34,B,False,1,
+R8,SPEAKER 2,35,B,True,3,These guys are very similar. Mhmm. So I would go with b because it is a higher level of food access.
+R8,SPEAKER 2,36,A,False,1,
+R8,SPEAKER 2,37,A,False,1,
+R8,SPEAKER 2,38,B,False,1,
+R8,SPEAKER 2,39,A,False,1,
+R8,SPEAKER 2,40,A,False,1,
+R8,SPEAKER 2,41,A,True,2,These are close to the same. I would go with a based on travel time as well as number of people served.
+R8,SPEAKER 2,42,A,True,2,So pretty similar so I would go with a based on the small organization.
+R8,SPEAKER 2,43,B,False,1,
+R8,SPEAKER 2,44,A,True,3,Not travel time because it's sixty minutes. Receiv the organization size and the level of food that's in.
+R8,SPEAKER 2,45,A,False,1,
+V1,SPEAKER 1,1,B,True,4,"To me, it would be helpful to really know more about the donation, like the quantity Mhmm. And a better breakdown. Mhmm. So that's that's kinda holding me back here."
+V1,SPEAKER 1,2,A,False,2,
+V1,SPEAKER 1,3,A,True,4,I don't know. I I think I would give to a.
+V1,SPEAKER 1,4,B,False,2,
+V1,SPEAKER 1,5,B,True,4,"I might give it a b. It's really close, though."
+V1,SPEAKER 1,6,B,False,2,
+V1,SPEAKER 1,7,A,False,2,
+V1,SPEAKER 1,8,A,False,2,
+V1,SPEAKER 1,9,B,True,4,"I wanna say it's I think b, because they serve more people. Mhmm. And I don't know. Even though their poverty rate is a lot less."
+V1,SPEAKER 1,10,B,True,5,It's a tough one. These are really equal too. We've given a lot more to recipient a. Mhmm. But this is the first time for b
+V1,SPEAKER 1,11,A,False,2,
+V1,SPEAKER 1,12,B,False,1,"Yeah. That's an easy one, I think. Oh, b. That's easy."
+V1,SPEAKER 1,13,B,False,1,
+V1,SPEAKER 1,14,B,False,2,
+V1,SPEAKER 1,15,B,True,3,"I mean, it's been eleven weeks. And you know what? Yeah. I'd still give it a b."
+V1,SPEAKER 1,16,A,False,2,
+V1,SPEAKER 1,17,B,False,2,
+V1,SPEAKER 1,18,B,False,2,
+V1,SPEAKER 1,19,B,False,2,
+V1,SPEAKER 1,20,A,False,2,
+V1,SPEAKER 1,21,B,True,4,That kinda sticks out. I don't know why that is.
+V1,SPEAKER 1,22,A,False,2,
+V1,SPEAKER 1,23,A,False,2,
+V1,SPEAKER 1,24,B,False,2,
+V1,SPEAKER 1,25,B,False,2,
+V1,SPEAKER 1,26,B,True,4,"Tough. Mhmm. Yeah. I mean, we've given to them four times nine weeks ago. The other is never."
+V1,SPEAKER 1,27,B,False,2,
+V1,SPEAKER 1,28,B,True,3,That's a toss-up.
+V1,SPEAKER 1,29,A,False,2,
+V1,SPEAKER 1,30,B,False,2,
+V1,SPEAKER 1,31,B,False,2,
+V1,SPEAKER 1,32,B,True,4,This is a tough one too. They're really close. Mhmm. I'm leaning towards b Mhmm. Only because their food access is extremely low.
+V3,SPEAKER 2,1,A,True,4,"So I think, overall, I'm gonna go with a. Okay."
+V3,SPEAKER 2,2,B,False,2,
+V3,SPEAKER 2,3,B,False,2,
+V3,SPEAKER 2,4,B,False,2,
+V3,SPEAKER 2,5,B,False,2,
+V3,SPEAKER 2,6,B,True,5,So it's kinda hard to use the travel time to say fair versus not fair... I I think I think that's tough driving more than two hours to donate something.
+V3,SPEAKER 2,7,B,True,4,This one's tough for that same reason of the travel time... I guess I'm gonna go with b and hope somebody can drive that far.
+V3,SPEAKER 2,8,A,False,1,
+V3,SPEAKER 2,9,B,True,3,"I kinda worry here because there's fewer than 50 people. And if you have a, like, a truckload of potatoes that they couldn't use it all"
+V3,SPEAKER 2,10,A,True,3,"I can see pros on both sides. So one doesn't completely stand out, but to me, the travel time makes the biggest difference"
+V3,SPEAKER 2,11,B,False,2,
+V3,SPEAKER 2,12,B,False,1,
+V3,SPEAKER 2,13,B,False,2,
+V3,SPEAKER 2,14,B,False,1,
+V3,SPEAKER 2,15,A,False,2,
+V3,SPEAKER 2,16,B,False,2,
+V3,SPEAKER 2,17,B,True,3,"I don't understand how that could be. It's, like, so little income, but nobody's has a very low poverty rate. But okay."
+V3,SPEAKER 2,18,B,True,3,This one's hard because a higher income level and a lower poverty rate. And that just must be those discrepancies and averages
+V3,SPEAKER 2,19,B,False,1,
+V3,SPEAKER 2,20,A,False,1,
+V3,SPEAKER 2,21,A,False,2,
+V3,SPEAKER 2,22,B,False,2,
+V3,SPEAKER 2,23,B,True,3,"Ugh. It would go even though this is a small group, I would go with them."
+V3,SPEAKER 2,24,B,True,3,"even though the income and poverty makes me wanna say this one is more deserving, the fact that it has such a large population or such a small population"
+V3,SPEAKER 2,25,A,False,2,
+V3,SPEAKER 2,26,A,False,1,
+V3,SPEAKER 2,27,B,False,2,
+V3,SPEAKER 2,28,B,False,1,
+V3,SPEAKER 2,29,A,False,2,
+V3,SPEAKER 2,30,A,False,2,
+V3,SPEAKER 2,31,B,False,1,
+V3,SPEAKER 2,32,A,True,3,I think if this had been somewhere else I would be more likely to go because of all these people. But the fact that they're that this is the one that drives my decision for AM.
+V3,SPEAKER 2,33,A,False,2,
+V3,SPEAKER 2,34,B,True,4,This one's hard because that difference between the drive time... probably contradicting myself all the time. Driving is important. It's not important.
+V3,SPEAKER 2,35,A,False,2,
+V3,SPEAKER 2,36,A,False,2,
+V3,SPEAKER 2,37,B,False,1,
+V3,SPEAKER 2,38,B,False,1,
+V3,SPEAKER 2,39,A,False,1,
+V3,SPEAKER 2,40,A,False,2,
+V3,SPEAKER 2,41,B,False,1,
+V3,SPEAKER 2,42,B,False,1,
+V3,SPEAKER 2,43,A,False,2,
+V3,SPEAKER 2,44,A,False,2,
+V3,SPEAKER 2,45,A,False,2,
+V5,SPEAKER 2,1,A,False,2,
+V5,SPEAKER 2,2,B,False,3,
+V5,SPEAKER 2,3,B,False,2,
+V5,SPEAKER 2,4,B,True,4,"it's just so hard to some of these are hard because Mhmm. The income level on this one is a lot less, but that serves more people."
+V5,SPEAKER 2,5,A,False,2,
+V5,SPEAKER 2,6,A,True,5,This kinda gets hard sometimes... I think I'm gonna go with b even though... no. I think I'm gonna go with a. A.
+V5,SPEAKER 2,7,A,True,3,"Yeah. Although they get more donations. This one got food two weeks ago, and the other one got food twelve weeks more often too."
+V5,SPEAKER 2,8,A,False,2,
+V5,SPEAKER 2,9,A,False,1,
+V5,SPEAKER 2,10,A,True,3,"It is. The only difference is the number of people at SURZ, and I think because of that, maybe a would be"
+V5,SPEAKER 2,11,A,False,1,
+V5,SPEAKER 2,12,A,True,3,I was gonna go with b on this one because the income level is so low... Okay. I'll go with a. I'll go with a.
+V5,SPEAKER 2,13,B,False,1,
+V5,SPEAKER 2,14,B,False,2,
+V5,SPEAKER 2,15,A,False,2,
+V5,SPEAKER 2,16,B,False,2,
+V5,SPEAKER 2,17,B,False,2,
+V5,SPEAKER 2,18,B,False,1,
+V5,SPEAKER 2,19,B,False,1,
+V5,SPEAKER 2,20,B,True,4,"This is hard because a hasn't had a donation for nine weeks while b had it one last week, and the income levels are relatively"
+V5,SPEAKER 2,21,A,False,2,
+V5,SPEAKER 2,22,B,True,3,"That's a hard one because it's has a higher income level, but... b, they had their last donation was eleven weeks ago"
+V5,SPEAKER 2,23,A,False,1,
+V5,SPEAKER 2,24,A,False,2,
+V5,SPEAKER 2,25,A,True,4,That's a toughie because a has never gotten any donations at all.
+V5,SPEAKER 2,26,B,True,4,"Well, that's hard, though, because b does has an extremely low in their income level so much. What do you think?"
+V5,SPEAKER 2,27,A,False,2,
+V5,SPEAKER 2,28,B,True,3,"This is a hard one. And how even in high income areas, there are people who need food and things."
+V5,SPEAKER 2,29,A,False,2,
+V5,SPEAKER 2,30,B,False,2,
+V5,SPEAKER 2,31,A,False,2,
+V5,SPEAKER 2,32,B,True,3,"That's a hard one. What do you think? They got a donation sooner, but the poverty rate's a lot higher."
+V5,SPEAKER 2,33,B,False,2,
+V5,SPEAKER 2,34,A,True,3,"This is so hard because, you know, there's only 50 people, but they've received less of a donation."
+V5,SPEAKER 2,35,A,False,2,
+V5,SPEAKER 2,36,B,True,3,"It's like you're playing god. There's more people in bee... but the income level is higher, and the poverty rate is much lower."
+V5,SPEAKER 2,37,A,False,2,
+V5,SPEAKER 2,38,A,True,3,I'm gonna go with a. This is a hard one too.
+V5,SPEAKER 2,39,B,True,4,"I gave him a hint. B. That's what I was tending towards because they got a well, it's not even that different"
+V5,SPEAKER 2,40,A,False,2,
+V5,SPEAKER 2,41,B,True,3,"Would be lower poverty or higher poverty rate, lower income... they didn't get their food for eleven weeks, but they got a higher share"
+V5,SPEAKER 2,42,A,True,3,I don't know. They got nine donations. They got five. What's your thought on that one?
+V5,SPEAKER 2,43,A,False,2,
+V5,SPEAKER 2,44,A,False,2,
+V5,SPEAKER 2,45,A,False,2,
+V6,SPEAKER 2,1,A,False,2,
+V6,SPEAKER 2,2,A,True,4,I could have easily chosen the other one Mhmm. They don't get less common high demand items very often.
+V6,SPEAKER 2,3,A,False,2,
+V6,SPEAKER 2,4,A,False,2,
+V6,SPEAKER 2,5,A,True,4,Let me just tell you that there is a problem here. It says their last donation was eleven weeks ago
+V6,SPEAKER 2,6,A,True,3,"you know, I'm gonna contradict myself a million times. So these are the same. Who the hell wants to drive an hour for common donation?"
+V6,SPEAKER 2,7,B,False,2,
+V6,SPEAKER 2,8,A,True,3,"Now I'm gonna contradict myself, and I'm go with b a."
+V6,SPEAKER 2,9,A,True,4,I'm gonna make somebody drive an hour because it's a thousand clients. It is a higher rate of poverty. No. It's not. Sorry.
+V6,SPEAKER 2,10,A,False,2,
+V6,SPEAKER 2,11,A,True,4,"So this one to me is six and one half dozen in another. On the one hand, a has not received a donation in six six weeks."
+V6,SPEAKER 2,12,B,True,4,"I don't know. Maybe it would be better to give them well, theoretically, this is all stuff that goes bad."
+V6,SPEAKER 2,13,A,True,3,"oh, no. It's a lower rate of poverty. These are more impoverished, but close. Whatever."
+V6,SPEAKER 2,14,A,False,2,
+V6,SPEAKER 2,15,A,False,2,
+V6,SPEAKER 2,16,A,False,2,
+V6,SPEAKER 2,17,B,False,2,
+V6,SPEAKER 2,18,A,False,2,
+V6,SPEAKER 2,19,A,False,2,
+V6,SPEAKER 2,20,A,False,2,
+V6,SPEAKER 2,21,A,False,2,
+V6,SPEAKER 2,22,A,True,3,"Right? You know, like, it's it they're not there are too many factors to and then there are the factors that are unknown."
+V6,SPEAKER 2,23,B,True,3,"This is a big differentiating thing, and that is a big differentiating thing. So you go with I thought yeah."
+V6,SPEAKER 2,24,A,False,2,
+V6,SPEAKER 2,25,A,False,2,
+V6,SPEAKER 2,26,A,False,2,
+V6,SPEAKER 2,27,A,False,2,
+V6,SPEAKER 2,28,A,False,2,
+V6,SPEAKER 2,29,A,False,1,
+V6,SPEAKER 2,30,A,False,2,
+V6,SPEAKER 2,31,A,False,2,
+V6,SPEAKER 2,32,A,False,1,
+V6,SPEAKER 2,33,A,False,2,
+V6,SPEAKER 2,34,A,False,2,
+V6,SPEAKER 2,35,A,False,2,
+V6,SPEAKER 2,36,A,False,2,
+V6,SPEAKER 2,37,A,False,2,
+V6,SPEAKER 2,38,A,False,2,
+V6,SPEAKER 2,39,A,False,1,
+V6,SPEAKER 2,40,A,False,1,
+V6,SPEAKER 2,41,A,False,1,
+V6,SPEAKER 2,42,A,False,1,
+V6,SPEAKER 2,43,A,False,1,
+V6,SPEAKER 2,44,A,False,1,
+V6,SPEAKER 2,45,A,False,1,
+V7,SPEAKER 2,1,A,False,2,
+V7,SPEAKER 2,2,B,False,2,
+V7,SPEAKER 2,3,B,True,3,"Bully, I guess b, because they've never received a donation even though their property rates a little bit lower."
+V7,SPEAKER 2,4,A,False,2,
+V7,SPEAKER 2,5,B,True,3,Probably being because their poverty rate is higher
+V7,SPEAKER 2,6,A,False,2,
+V7,SPEAKER 2,7,A,False,2,
+V7,SPEAKER 2,8,A,False,2,
+V7,SPEAKER 2,9,A,True,3,"Probably a, because their income levels seem to be less than the poverty rate's higher."
+V7,SPEAKER 2,10,B,False,2,
+V7,SPEAKER 2,11,unclear,True,4,
+V7,SPEAKER 2,12,unclear,True,4,
+V7,SPEAKER 2,13,unclear,True,4,
+V7,SPEAKER 2,14,unclear,True,4,
+V7,SPEAKER 2,15,unclear,True,4,
+V7,SPEAKER 2,16,unclear,True,4,
+V7,SPEAKER 2,17,unclear,True,4,
+V7,SPEAKER 2,18,unclear,True,4,
+V7,SPEAKER 2,19,unclear,True,4,
+V7,SPEAKER 2,20,unclear,True,4,
+V7,SPEAKER 2,21,unclear,True,4,
+V7,SPEAKER 2,22,unclear,True,4,
+V7,SPEAKER 2,23,unclear,True,4,
+V7,SPEAKER 2,24,unclear,True,4,
+V7,SPEAKER 2,25,unclear,True,4,
+V7,SPEAKER 2,26,unclear,True,4,
+V7,SPEAKER 2,27,unclear,True,4,
+V7,SPEAKER 2,28,unclear,True,4,
+V7,SPEAKER 2,29,unclear,True,4,
+V7,SPEAKER 2,30,unclear,True,4,
+V7,SPEAKER 2,31,unclear,True,4,
+V7,SPEAKER 2,32,unclear,True,4,
+V7,SPEAKER 2,33,unclear,True,4,
+V7,SPEAKER 2,34,unclear,True,4,
+V7,SPEAKER 2,35,unclear,True,4,
+V7,SPEAKER 2,36,unclear,True,4,
+V7,SPEAKER 2,37,unclear,True,4,
+V7,SPEAKER 2,38,unclear,True,4,
+V7,SPEAKER 2,39,unclear,True,4,
+V7,SPEAKER 2,40,unclear,True,4,
+V7,SPEAKER 2,41,unclear,True,4,
+V7,SPEAKER 2,42,unclear,True,4,
+V7,SPEAKER 2,43,unclear,True,4,
+V7,SPEAKER 2,44,unclear,True,4,
+V7,SPEAKER 2,45,unclear,True,4,

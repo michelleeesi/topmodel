@@ -1,0 +1,61 @@
+personID,comparison,choice,conflicted,difficulty_score,evidence
+16234,1,B,False,1,"""That one to me is easy. I would go with patient B because they've been on the list for so long"""
+16234,2,B,False,2,"""I think I would get with patient B again because it had been on the list for 2 more years."""
+16234,3,A,False,2,"""I think I would go with Patient A again, because they've been on the list longer."""
+19857,1,B,True,4,"This one's a tough one, because the one that has less years of life has been on the waiting list longer."
+19857,2,A,False,2,
+19857,3,A,True,5,Gosh! This one's hard. It keeps getting harder. Let me see.
+23405,1,A,True,3,I'm doing mental combat with myself. but I feel like I strongly lean towards A
+23405,2,A,True,4,"That one's really hard, though."
+23405,3,B,True,5,"one moment I think I would lean towards A and it's because of the dependent, and that next moment I'm thinking, no, B, because 20 years."
+25171,1,A,True,4,So. Oof that's so hard when you have those two.
+25171,2,A,False,1,
+25171,3,B,False,2,
+28789,1,B,False,2,
+28789,2,A,False,2,
+28789,3,B,True,5,"""That one's a lot harder."" ""That one's tough."" ""I'm not gonna lie, I guess I went with what when I was in a spot of indecisiveness"""
+31772,1,B,False,1,
+31772,2,B,False,1,
+31772,3,A,True,3,"""Crossing out. The work. Crossing out in this case makes it harder, for, like the dependences makes me, I don't know."""
+42828,1,A,False,2,
+42828,2,A,True,5,"""Oh, boy, you're not making this easy, are you? This is tough. This is really really tough. Wow! ... This is hard. This is really hard. Oh, my God"""
+42828,3,A,True,4,"""Oh, boy, this one is tough as well. It's wow! This is. This is a difficult, difficult decision."""
+45865,1,A,True,3,"I know patient B has 25 years, and that's a that's a lot of life lost. So it's kind of hard."
+45865,2,B,True,4,"I don't know it's hard... I'm gonna actually go with B, because I don't wanna be a hypocrite."
+45865,3,B,True,5,This one is a little tricky... It's kind of hard. Can I be undecided for this?
+51283,1,A,False,2,
+51283,2,B,False,2,
+51283,3,A,True,3,"""Okay? So I think, looking at the 2 patients, I'm trying to. Okay. So this person is obese, this person is on the weeds."""
+53826,1,A,True,3,"I mean, I hate that. That was like one of the first things I saw was the conflict. That's like, Oh, man. I hate that!"
+53826,2,B,False,2,
+53826,3,B,False,2,I'm so glad I don't have to make these decisions every day. I would probably end up being an alcoholic.
+54338,1,B,False,1,
+54338,2,A,False,1,
+54338,3,B,False,2,"I would go with B at like the life expectancy 20 years versus 10 years and obesity. I mean, if you were looking at the BMI."
+62264,1,B,False,2,
+62264,2,A,False,2,
+62264,3,B,True,5,"""this one's a really tough one for me. I'm not sure. The number dependents I feel like is an important thing. But I don't know. This is just a really tough call."""
+66158,1,B,True,3,"Yeah, that's that's tough."
+66158,2,B,True,4,"So what's getting me caught up right now is just the amount of how much work they would be able to do, even though I said that shouldn't matter."
+66158,3,A,True,4,I mean on both ends. It seems like the positives and negatives cancel each other out here.
+68470,1,B,True,3,"Gosh, I really hope I never have to make these decisions. Oh, that's hard."
+68470,2,A,False,2,"""it was easier. I don't know why, though that's a good question."""
+68470,3,A,True,4,"""That one's harder, though that was the hardest. This is the hardest one, I think."""
+74211,1,A,False,1,
+74211,2,A,False,2,
+74211,3,A,True,4,"""so very close. A, yeah."""
+76769,1,A,False,1,
+76769,2,A,True,3,"Yes, it will. I'm not gonna lie to you. I'll pick patient A over patient B, because I know where people will morbidly..."
+76769,3,A,False,1,
+80894,1,A,True,4,"Yeah, that's yeah. This is so tough. Ii personally feel like patient A probably should receive priority more."
+80894,2,A,False,2,I would probably say patient A. I know that patient B you know has been on the list for 2 years longer
+80894,3,A,True,3,"I would probably say patient A... the years of life expected to be gained, that's 10 years. That's still pretty big difference. But I would say it's it's less of a difference."
+87360,1,A,True,4,"when I originally saw the screen you presented, my initial thought was like, oh gosh, that's hard! Because it was like, were the two features that I considered most important."
+87360,2,A,False,2,
+87360,3,B,False,2,
+97256,1,A,False,1,
+97256,2,A,False,1,
+97256,3,A,False,2,"If they didn't have a dependent that might change, that might sway me a little bit more to B."
+99453,1,A,True,4,"This is tough. My gut, makes me lean toward patient A... But then I also wonder, how much does this person provide for the family? This is a hard one"
+99453,2,A,False,2,
+99453,3,A,True,4,"I feel pulled to give it to, to prioritize patient B, but it's that dependent... It's a tough one."
