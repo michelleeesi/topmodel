@@ -613,52 +613,144 @@ md(r"""### D. Feature correlation *hides* the bias — it does not remove it
 
 Section B/C showed that *decision* regret shrinks as features correlate. But does the biased rule stop
 corrupting $\hat\omega$, or does the corruption just stop *mattering* for decisions on the elicitation
-distribution? We separate the two: sweep the feature correlation $\rho$ and track (left) downstream
-regret evaluated both on the **matched** deployment distribution and on an **off-axis** one (independent
-items), and (right) the learned weight on the feature the rule keys on.
+distribution? To answer this without pinning the result to one arbitrarily-chosen test distribution, we
+stop tying regret to a single deployment shape. For each learned rule we report three numbers, all as a
+fraction of the largest possible decision spread $\|\omega^*\|_1$ (the anti-optimal ceiling over the unit
+feature box $[0,1]^d$; $=1$ here since $\omega^*$ is on the simplex):
+
+* **matched** — regret on the elicitation distribution (the training feature model) only;
+* **worst case over *all* test distributions** — the supremum of per-decision regret over *every*
+  input distribution on $[0,1]^d$. By LP duality this is a closed form needing no Monte-Carlo and no
+  chosen shape: $\;\sup\nolimits_{a,b\in[0,1]^d,\;\hat\omega\cdot b\ge\hat\omega\cdot a}\omega^*\!\cdot(a-b)
+  = \min_{\lambda\ge0}\sum_j |\omega^*_j-\lambda\hat\omega_j|$;
+* **average over test distributions** — mean regret over an ensemble of random test shapes (random
+  Gaussian-copula correlations $+$ random per-feature scales), so it is not tied to any single shape either.
+
+We sweep the elicitation correlation $\rho$ and track these notions for the biased rule **and a benign
+$50/50$ baseline** (so any persistent excess is attributable to the bias, not to generic finite-sample
+estimation error), plus the learned weight on the feature the rule keys on. Because the worst case
+($\sim$60–70%) and the matched/average regret ($\sim$0–7%) live on very different scales, they get
+separate panels.
 
 The result: the parameter distortion is **invariant to $\rho$** (the keyed weight stays inflated at
-every correlation), and matched-deployment regret $\to 0$ only because at high $\rho$ the weights are
-barely *identified* on matched data — all $\omega$ rank matched items alike. Deploy on a distribution
-where the attributes come apart and the full harm reappears. **The bias is a latent, deployment-shift
-liability, not a benign one.**""")
+every correlation), and *matched* regret $\to 0$ only because at high $\rho$ the weights are barely
+*identified* on matched data — all $\omega$ rank matched items alike. But the **average regret over test
+distributions stays elevated at every $\rho$** (about $2\times$ the benign baseline), and the **worst
+case over all test distributions stays high and flat** — note it is near-saturated for *any* imperfect
+rule (the unit-box adversary exploits any estimation error, so even the benign rule sits around 55–60%),
+yet the biased rule sits strictly above it at every $\rho$. Deploy on a distribution where the attributes
+come apart and the harm reappears. **The bias is a latent, deployment-shift liability, not a benign one —
+and that conclusion no longer depends on which off-axis test distribution we picked.**""")
 
-code(r"""# ---- D. correlation masks decision harm but not parameter harm ----
+code(r"""# ---- D. correlation masks decision harm but not parameter harm --------------------
+# Downstream regret of a learned rule omega_hat, NOT tied to any one test distribution.
+# All three notions below are reported as a fraction of the largest possible decision
+# spread ||omega_star||_1 (the anti-optimal ceiling over the unit box [0,1]^d; = 1 on
+# the simplex). This is the natural, fixed denominator when the *test distribution
+# itself is the variable* -- a per-distribution ceiling would differ across shapes and
+# is degenerate for the worst case (the adversarial slate is its own ceiling).
+
+def worstcase_over_dists(omega_hat, omega_star):
+    # sup over ALL input distributions on the unit box [0,1]^d of per-decision best-of-N
+    # regret of rule omega_hat under omega_star, as a fraction of ||omega_star||_1.
+    # A 2-item slate {a (true-best), b (rule-picked)} suffices for the worst case:
+    #   max_{a,b in [0,1]^d : omega_hat.b >= omega_hat.a} omega_star.(a - b),
+    # whose LP dual is the closed form below (verified against scipy.linprog):
+    #   min_{lambda >= 0} sum_j |omega_star_j - lambda * omega_hat_j|.
+    # g(lambda) is piecewise-linear convex; its min over lambda>=0 sits at lambda=0 or a
+    # breakpoint omega_star_j / omega_hat_j. No Monte-Carlo, no chosen test shape.
+    oh = np.asarray(omega_hat, float); os_ = np.asarray(omega_star, float)
+    cand = [0.0] + [os_[j] / oh[j] for j in range(len(oh)) if oh[j] != 0 and os_[j] / oh[j] > 0]
+    return min(np.abs(os_ - lam * oh).sum() for lam in cand) / np.abs(os_).sum()
+
+def random_test_models(n_models, dim, rng, smin=0.25):
+    # Ensemble of random test-input distributions on the unit box: each has a random
+    # Gaussian-copula correlation (PSD, U[0,1] marginals) and a random per-feature scale
+    # in [smin, 1] (support [0, scale_j] stays inside the box the worst case covers).
+    models = []
+    for _ in range(n_models):
+        A = rng.normal(size=(dim, dim)); C = A @ A.T
+        d = np.sqrt(np.diag(C)); corr = C / np.outer(d, d)       # random PSD correlation
+        models.append((corr, rng.uniform(smin, 1.0, size=dim)))
+    return models
+
+def avgcase_over_dists(omega_hat, omega_star, models, rng):
+    # Mean best-of-N regret over the test-shape ensemble, fraction of ||omega_star||_1.
+    reg = [ic.best_of_n_regret(omega_hat, omega_star, rng, n_slates=300, cov=cov, scale=sc)
+           for cov, sc in models]
+    return float(np.mean(reg)) / float(np.abs(omega_star).sum())
+
 RHOS = [0.0, 0.25, 0.5, 0.75, 0.95]
 dcfg = dict(tau_r=TAU_R, tau_kappa=TAU_K, noise_scale=NOISE_SCALE, noise_type=NOISE_TYPE,
             T=110, n_candidates=N_CAND, n_samples=120, burn_in=60, n_holdout=400,
             n_jobs=N_JOBS, query_sigma=0.30)
 O_D = ex.make_oracles(12, dim=DIM, seed=2026, alpha=ORACLE_ALPHA)
+TEST_MODELS = random_test_models(24, DIM, np.random.default_rng(404))   # ensemble of test shapes
 
-def _dreg(tr, cov):  # mean best-of-N regret (% worst) on a chosen deployment distribution
+def _matched(tr, cov):  # regret on the elicitation distribution, fraction of ||w||_1
     return 100 * np.mean([ic.best_of_n_regret(t["omega_hat"], w, np.random.default_rng(700_000 + i), cov=cov)
-                          / worstcase_regret(w, 700_000 + i, cov=cov) for i, (t, w) in enumerate(zip(tr, O_D))])
+                          / np.abs(w).sum() for i, (t, w) in enumerate(zip(tr, O_D))])
+def _worst(tr):         # closed-form worst case over all test distributions
+    return 100 * np.mean([worstcase_over_dists(t["omega_hat"], w) for t, w in zip(tr, O_D)])
+def _avg(tr):           # average over the random ensemble of test distributions
+    return 100 * np.mean([avgcase_over_dists(t["omega_hat"], w, TEST_MODELS, np.random.default_rng(710_000 + i))
+                          for i, (t, w) in enumerate(zip(tr, O_D))])
 
-reg_match, reg_offax, benign_m, infl = [], [], [], []
+# Biased single-feature(0) rule vs a benign 50/50 baseline; the benign rule is also
+# evaluated worst/average over test dists, so the persistent excess is attributable to
+# the bias and not to generic finite-sample estimation error.
+reg_match, reg_worst, reg_avg = [], [], []          # biased single-feature
+ben_avg,  ben_worst = [], []                          # benign 50/50
+infl = []
 for rho in RHOS:
     cov = None if rho == 0 else (1 - rho) * np.eye(DIM) + rho * np.ones((DIM, DIM))
     trs = ex.run_method({"kind": "bt", "forcing": ic.force_single_feature, "forcing_kwargs": {"feature": 0}},
                         O_D, base_seed=SEED, feature_cov=cov, **dcfg)
     trb = ex.run_method({"kind": "bt", "forcing": ic.force_5050}, O_D, base_seed=SEED, feature_cov=cov, **dcfg)
-    reg_match.append(_dreg(trs, cov)); reg_offax.append(_dreg(trs, None)); benign_m.append(_dreg(trb, cov))
+    reg_match.append(_matched(trs, cov)); reg_worst.append(_worst(trs)); reg_avg.append(_avg(trs))
+    ben_worst.append(_worst(trb)); ben_avg.append(_avg(trb))
     infl.append(float(np.mean([t["omega_hat"][0] for t in trs])))
 f0_true = float(np.mean([w[0] for w in O_D]))
 
-fig, (axL, axR) = plt.subplots(1, 2, figsize=(11, 4.0))
-axL.plot(RHOS, reg_match, "o-", color=PALETTE["bt_single"], lw=2, label="single-feature, deploy = elicitation dist.")
-axL.plot(RHOS, reg_offax, "s--", color="#b91c1c", lw=2, label="single-feature, deploy = off-axis (independent)")
-axL.plot(RHOS, benign_m, "^:", color=PALETTE["bt_5050"], lw=1.6, label="benign 50/50 (matched)")
-axL.set_xlabel(r"feature correlation $\rho$"); axL.set_ylabel("downstream regret (% of worst-case)")
-axL.set_title("Decision harm: masked on matched, persists off-axis"); axL.legend(fontsize=8); axL.set_ylim(bottom=0)
+# Worst (~60-70%) and average/matched (~0-7%) live on very different scales, so we give
+# each its own panel: (1) worst case over all test dists, (2) matched vs average, (3) omega.
+fig, (axW, axA, axR) = plt.subplots(1, 3, figsize=(15, 4.2))
+fig.subplots_adjust(wspace=0.32)
+
+# Panel 1: worst case over ALL test distributions (closed-form ceiling).
+axW.plot(RHOS, reg_worst, "D-", color="#7f1d1d",         lw=2.2, label="single-feature (biased)")
+axW.plot(RHOS, ben_worst, "o-", color=PALETTE["bt_comp"], lw=1.8, label="benign 50/50")
+axW.set_xlabel(r"feature correlation $\rho$ (elicitation)")
+axW.set_ylabel(r"regret (% of max spread $\|\omega^*\|_1$)")
+axW.set_title("Worst case over ALL test dists.\n(near-saturated for any imperfect rule; bias adds an excess)",
+              fontsize=10)
+axW.legend(fontsize=8); axW.set_ylim(bottom=0)
+
+# Panel 2: matched (masked) vs average over the test-shape ensemble.
+axA.plot(RHOS, reg_match, "o:",  color="#f59e0b",          lw=1.8, label="single-feature: matched (elicitation)")
+axA.plot(RHOS, reg_avg,   "s--", color=PALETTE["bt_single"], lw=2.0, label="single-feature: average over test dists.")
+axA.plot(RHOS, ben_avg,   "^--", color=PALETTE["bt_5050"],  lw=1.6, label="benign 50/50: average over test dists.")
+axA.set_xlabel(r"feature correlation $\rho$ (elicitation)")
+axA.set_ylabel(r"regret (% of max spread $\|\omega^*\|_1$)")
+axA.set_title("Matched regret is masked ($\\to 0$);\naverage over test dists. persists (~2x benign)", fontsize=10)
+axA.legend(fontsize=8); axA.set_ylim(bottom=0)
+
+# Panel 3: parameter harm -- the learned weight on the keyed feature.
 axR.plot(RHOS, infl, "o-", color=PALETTE["bt_single"], lw=2, label="learned weight on keyed feature")
 axR.axhline(f0_true, color="k", ls=":", lw=1.5, label="true weight")
 axR.set_xlabel(r"feature correlation $\rho$"); axR.set_ylabel("weight on keyed feature (elderlyDep)")
-axR.set_title("Parameter harm: invariant to correlation"); axR.legend(fontsize=8); axR.set_ylim(bottom=0)
-fig.suptitle("Feature correlation HIDES the forced-choice bias, it does not remove it", y=1.02, fontsize=12)
+axR.set_title("Parameter harm: invariant to correlation", fontsize=10); axR.legend(fontsize=8); axR.set_ylim(bottom=0)
+
+fig.suptitle("Feature correlation HIDES the forced-choice bias (masked on the matched distribution), "
+             "it does not remove it (persists over test distributions and in $\\hat\\omega$)",
+             y=1.03, fontsize=12)
 fig.savefig("fig_correlation_masking.pdf"); fig.savefig("fig_correlation_masking.png")
 plt.show()
-print("learned weight on keyed feature stays ~%.2f (true %.2f) for ALL rho; matched regret -> 0 while "
-      "off-axis regret stays ~%.0f%%." % (np.mean(infl), f0_true, np.mean(reg_offax)))
+print("keyed-feature weight stays ~%.2f (true %.2f) for ALL rho. Matched regret -> %.1f%% at rho=%.2f, "
+      "but AVERAGE over test dists stays ~%.0f%% (vs benign ~%.0f%%) and the WORST case over all test "
+      "dists ~%.0f%% (vs benign ~%.0f%%) -- both flat in rho."
+      % (np.mean(infl), f0_true, reg_match[-1], RHOS[-1], np.mean(reg_avg), np.mean(ben_avg),
+         np.mean(reg_worst), np.mean(ben_worst)))
 """)
 
 md(r"""### Robustness conclusions
@@ -681,13 +773,17 @@ md(r"""### Robustness conclusions
   actually exhibits, forced-choice bias is mild on average, and broad learning's advantage is the more
   robust effect.
 * **But "mild decision regret" $\neq$ "no harm" — the bias is a deployment-shift liability (section D).**
-  The reduced decision regret at high correlation does *not* mean the biased rule stopped corrupting
-  $\hat\omega$: the learned weight on the keyed feature stays inflated at **every** $\rho$. Correlation
-  only makes that distortion *irrelevant to decisions on the elicitation distribution* (where the
-  weights are barely identified). Deploy the same $\hat\omega$ on an **off-axis** population — where the
-  conflated attributes vary independently — and the full ~17% regret returns. So the safe-looking kidney
-  numbers are conditional on deploying to a population like the elicitation one; they are *not* a
-  guarantee, and any subgroup / cohort / policy that decorrelates the attributes re-exposes the harm.
+  The reduced *matched* decision regret at high correlation does *not* mean the biased rule stopped
+  corrupting $\hat\omega$: the learned weight on the keyed feature stays inflated at **every** $\rho$.
+  Correlation only makes that distortion *irrelevant to decisions on the elicitation distribution*
+  (where the weights are barely identified). To avoid pinning this on one arbitrarily-chosen off-axis
+  distribution, section D measures regret two ways that do *not* depend on a test shape: the **worst
+  case over all input distributions** on the unit box (a closed-form LP bound,
+  $\min_{\lambda\ge0}\sum_j|\omega^*_j-\lambda\hat\omega_j|$) and the **average over a random ensemble of
+  test shapes**. Both stay elevated at every $\rho$ while the matched regret collapses. So the
+  safe-looking kidney numbers are conditional on deploying to a population like the elicitation one; they
+  are *not* a guarantee, and any subgroup / cohort / policy that decorrelates the attributes re-exposes
+  the harm — including, in the limit, the worst-case ceiling.
 * **`compromise` (structural): stays $\le$ feature-keyed everywhere**, and its harmlessness is itself
   geometry-dependent (it relies on the symmetric $U[0,1]$ feature mean coinciding with the compromise
   center).
@@ -727,7 +823,11 @@ md(r"""## Summary
    over *which* attribute the heuristic keys on, biased-forcing regret is ~benign (~6% vs ~5% of
    worst-case) — only a rule fixated on the single highest-spread attribute (workhours) reaches ~2×
    benign, vs ~3× for *any* attribute under independent features. Broad learning's advantage is the
-   more robust effect.
+   more robust effect. **But correlation only *masks* the bias, it does not remove it (section D):**
+   evaluated as the **worst case** or the **average over test input distributions** — not on a single
+   matched shape — the biased rule's downstream regret stays elevated at every $\rho$ even as its
+   matched regret collapses, while its $\hat\omega$ stays inflated throughout. The bias is a latent
+   deployment-shift liability.
 
 *Figures saved:* `fig_block0_sanity.{pdf,png}`, `fig_block1_bias.{pdf,png}`, `fig_block2_efficiency.{pdf,png}`,
 `fig_severe_bias.{pdf,png}`, `fig_severe_efficiency.{pdf,png}`, `fig_correlation_masking.{pdf,png}`.

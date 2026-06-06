@@ -68,12 +68,19 @@ The notebook's appendix sweeps the oracle concentration (Dirichlet `alpha`), the
 * **But mild decision regret ≠ no harm (section D, `fig_correlation_masking`).** Correlation does *not*
   stop the biased rule from corrupting `omega_hat` — the learned weight on the keyed feature stays
   inflated at *every* `rho`. It only makes that distortion irrelevant to decisions *on the elicitation
-  distribution* (where, at high `rho`, the weights are barely identified). Evaluate the same `omega_hat`
-  on an **off-axis** deployment (independent items) and the full ~17% regret returns. So the bias is a
-  **latent deployment-shift liability**: safe-looking only if you deploy to a population like the
-  elicitation one; any subgroup/cohort/policy that decorrelates the attributes re-exposes it. This is
-  why parameter-level metrics (weight error, per-feature distortion) and off-axis / worst-case
-  deployment regret are worth reporting alongside matched-deployment regret.
+  distribution* (where, at high `rho`, the weights are barely identified). To avoid tying this to one
+  arbitrarily-chosen off-axis shape, section D scores downstream regret in two **shape-free** ways: the
+  **worst case over *all* test input distributions** on the unit box — a closed-form LP bound,
+  `min_{λ≥0} Σ_j |omega*_j − λ·omega_hat_j|` (verified against `scipy.linprog`) — and the **average over a
+  random ensemble** of test shapes (random Gaussian-copula correlations + per-feature scales). Both stay
+  flat in `rho` while the matched regret collapses: the average sits ~2× the benign baseline, and the
+  worst case is high (~60–70%) — though near-saturated for *any* imperfect rule (the unit-box adversary
+  exploits any estimation error, so even benign is ~55–60%), with the biased rule strictly above benign at
+  every `rho`. So the bias is a **latent deployment-shift liability**: safe-looking only if you deploy to a
+  population like the elicitation one; any subgroup/cohort/policy that decorrelates the attributes
+  re-exposes it. This is why parameter-level metrics (weight error, per-feature distortion) and
+  shape-free (worst / average over test distributions) regret are worth reporting alongside
+  matched-deployment regret.
 
 ## Running
 
