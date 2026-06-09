@@ -64,7 +64,7 @@ CONFIG = dict(
     T=6,
     N=4,
     noise_type="logistic",
-    scale_delta=0.5,
+    scale_delta=0.1,
     scale_r=0.0,
     lambda_x=1.0,
     shape_beta=2.0,    # ignored when noise_type='logistic'

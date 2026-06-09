@@ -221,6 +221,50 @@ def sample_response(
     return "left" if g_tilde > 0 else "right"
 
 
+def sample_response_bt(
+    query: Query,
+    omega: np.ndarray,
+    scale_delta: float,
+    rng: np.random.Generator,
+) -> str:
+    """Pure Bradley-Terry response — agent picks LEFT w.p. sigmoid(g / scale_delta),
+    independent of any (tau_r, tau_kappa) thresholds. Used when the experimental
+    setup assumes the agent's preferences themselves are Bradley-Terry and the
+    (tau_r, tau_kappa) thresholds only describe how the *interface* categorizes
+    queries as decisive vs indecisive (post-hoc)."""
+    g, _ = evidence(query.delta, omega)
+    return "left" if rng.random() < sigmoid(g / scale_delta) else "right"
+
+
+def categorize_query(
+    query: Query,
+    omega: np.ndarray,
+    tau_r: float,
+    tau_kappa: float,
+    noise_scale: float,
+    noise_type: str,
+    rng: np.random.Generator,
+) -> str:
+    """Post-hoc system categorization of a query as 'indifferent' (small r),
+    'conflict' (noisy score below threshold), or 'decisive'. Independent of the
+    agent's actual BT response — used together with sample_response_bt to model
+    a pure-BT respondent and a separate interface that decides when to call the
+    response indecisive."""
+    g, r = evidence(query.delta, omega)
+    if r < tau_r:
+        return "indifferent"
+    if noise_type == "logistic":
+        eps = rng.logistic(0.0, noise_scale)
+    elif noise_type == "normal":
+        eps = rng.normal(0.0, noise_scale)
+    else:
+        raise ValueError(f"unknown noise_type {noise_type!r}")
+    g_tilde = g + eps
+    if abs(g_tilde) <= tau_kappa * r:
+        return "conflict"
+    return "decisive"
+
+
 def bt_probs(g: np.ndarray, scale: float) -> np.ndarray:
     """Binary Bradley-Terry probabilities [p_left, p_right] = [sigmoid(scale*g), .]."""
     g = np.asarray(g, dtype=float)
@@ -520,7 +564,8 @@ def pairwise_regret(omega_hat: np.ndarray, omega_star: np.ndarray, deltas: np.nd
 __all__ = [
     "FEATURE_NAMES", "DIM", "LABELS4", "LABEL_IDX",
     "Query", "sample_queries", "draw_features", "deltas_of",
-    "evidence", "response_probs", "sample_response", "bt_probs",
+    "evidence", "response_probs", "sample_response", "sample_response_bt",
+    "categorize_query", "bt_probs",
     "hit_and_run_step", "mcmc_posterior",
     "make_loglik_broad", "make_loglik_bt",
     "select_query_bald", "_broad_probs_fn", "_bt_probs_fn",

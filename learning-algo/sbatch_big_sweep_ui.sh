@@ -2,8 +2,8 @@
 #SBATCH --job-name=bald_sweep_ui
 #SBATCH --partition=shared
 #SBATCH --cpus-per-task=32
-#SBATCH --mem=64G
-#SBATCH --time=06:00:00
+#SBATCH --mem=96G
+#SBATCH --time=72:00:00
 #SBATCH --output=bald_sweep_ui_%j.out
 #SBATCH --error=bald_sweep_ui_%j.err
 # Big sweep for the utilize/ignore-only comparison. %j is the slurm job ID.
@@ -19,7 +19,7 @@ echo "[$(date)] cwd=$(pwd)"
 
 # Option A: anaconda module + your conda env (most common on FAS)
 module load python
-# source activate bald   # uncomment and replace `bald` with your env name
+source activate bald
 
 # Option B: explicit miniconda / mamba install you set up yourself
 # source $HOME/miniconda3/etc/profile.d/conda.sh

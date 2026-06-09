@@ -46,6 +46,7 @@ def load_helpers_from_notebook(nb_path):
         "def run_grid_sweep",                 # cell 10: serial grid sweep
         "def sample_posterior_mog",           # cell 11: MoG-noise helpers
         "def run_grid_sweep_parallel",        # cell 12: parallel runner
+        "def sample_posterior_threshold_learning",  # cell 13: joint (omega, tau_r, tau_kappa) sampler
     ]
 
     cell_sources = ["".join(c.get("source", [])) for c in nb["cells"]]
@@ -69,7 +70,7 @@ CONFIG = dict(
     T=6,
     N=4,
     noise_type="logistic",
-    scale_delta=0.5,
+    scale_delta=0.1,
     scale_r=0.0,
     lambda_x=1.0,
     shape_beta=2.0,    # ignored when noise_type='logistic'
@@ -79,6 +80,7 @@ CONFIG = dict(
         "utilize",
         "utilize_3outcome",
         "utilize_unknown_family",
+        "utilize_threshold_learning",
         "ignore",
         "ignore_mog",
     ],

@@ -61,20 +61,22 @@ mpl.rcParams.update({
     "figure.dpi": 120, "savefig.dpi": 200, "savefig.bbox": "tight",
     "font.size": 11, "axes.titlesize": 12, "axes.labelsize": 11,
     "axes.spines.top": False, "axes.spines.right": False,
-    "legend.frameon": False, "axes.grid": True, "grid.alpha": 0.25,
+    "legend.frameon": False, "axes.grid": False,
 })
 
+# Okabe-Ito colorblind-safe palette (https://jfly.uni-koeln.de/color/).
+# Eight maximally distinguishable colors under all common forms of color vision.
 PALETTE = {
-    "broad4":   "#4c1d95",  # deep purple  -- broad 4-way (the ceiling)
-    "broad3":   "#7c3aed",  # purple       -- broad 3-way
-    "bt_skip":  "#0ea5e9",  # blue         -- ignore indecision
-    "bt_5050":  "#10b981",  # green        -- benign 50/50
-    "bt_btcons":"#059669",  # dark green   -- benign BT-consistent
-    "bt_lex":   "#f59e0b",  # amber        -- biased lexicographic (feature-keyed)
-    "bt_single":"#ef4444",  # red          -- biased single-feature (feature-keyed)
-    "bt_self":  "#b91c1c",  # dark red     -- biased self-similarity (feature-keyed)
-    "bt_gut":   "#7f1d1d",  # darkest red  -- biased gut-weights (feature-keyed, dense)
-    "bt_comp":  "#64748b",  # slate        -- structural: compromise / extremeness aversion
+    "broad4":   "#CC79A7",  # reddish purple -- broad 4-way (the ceiling)
+    "broad3":   "#56B4E9",  # sky blue       -- broad 3-way
+    "bt_skip":  "#000000",  # black          -- ignore indecision
+    "bt_5050":  "#009E73",  # bluish green   -- benign 50/50
+    "bt_btcons":"#0072B2",  # blue           -- benign BT-consistent
+    "bt_lex":   "#E69F00",  # orange         -- biased lexicographic
+    "bt_single":"#D55E00",  # vermillion     -- biased single-feature
+    "bt_self":  "#D55E00",  # vermillion     -- biased self-similarity (shares vermillion w/ bt_single; not co-plotted)
+    "bt_gut":   "#F0E442",  # yellow         -- biased gut-weights
+    "bt_comp":  "#999999",  # neutral grey   -- structural: compromise / extremeness aversion
 }
 NAMES = {
     "broad4": "Broad (4-way)", "broad3": "Broad (3-way)",
@@ -88,7 +90,7 @@ NAMES = {
 # PILOT scale runs end-to-end in a couple of minutes. Scale up (N_ORACLES, T,
 # N_SAMPLES) for the paper-quality run; the seeds and structure are unchanged.
 DIM         = ic.DIM
-NOISE_SCALE = 0.5
+NOISE_SCALE = 0.1
 NOISE_TYPE  = "logistic"
 N_ORACLES   = 40        # oracles == trials; more -> tighter error bars
 ORACLE_ALPHA= 0.3        # sparse/peaky oracles (harder; room to improve)

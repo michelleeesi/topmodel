@@ -25,6 +25,7 @@ from indecision_core import (
     make_loglik_broad, make_loglik_bt, mcmc_posterior,
     select_query_bald, _broad_probs_fn, _bt_probs_fn,
     l1_error, cosine_sim, weight_distortion, best_of_n_regret, pairwise_regret,
+    sample_response_bt, categorize_query,
 )
 
 # Label-code maps for the broad learners.
@@ -67,6 +68,8 @@ def run_trial_broad(
     noise_scale: float,
     noise_type: str = "logistic",
     T: int = 40,
+    convergence_tol: Optional[float] = None,
+    convergence_patience: int = 5,
     n_candidates: int = 30,
     n_samples: int = 200,
     burn_in: int = 100,
@@ -96,7 +99,10 @@ def run_trial_broad(
 
     l1s, coss, n_dec = [], [], []
     decisive = 0
-    for _ in range(T):
+    omega_prev = omega_hat.copy()
+    n_stable = 0
+    stopped_at = T  # will be overwritten if we break early
+    for t_iter in range(T):
         candidates = sample_queries(n_candidates, dim, cand_rng, similarity=query_sigma,
                                     cov=feature_cov, scale=feature_scale)
         q = select_query_bald(candidates, posterior, probs_fn, mcmc_rng)
@@ -115,8 +121,19 @@ def run_trial_broad(
         l1s.append(l1_error(omega_hat, omega_star))
         coss.append(cosine_sim(omega_hat, omega_star))
         n_dec.append(decisive)
+        # Convergence check: |omega_t - omega_{t-1}|_1 < tol for `patience` consecutive steps.
+        if convergence_tol is not None:
+            if float(np.abs(omega_hat - omega_prev).sum()) < convergence_tol:
+                n_stable += 1
+            else:
+                n_stable = 0
+            if n_stable >= convergence_patience:
+                stopped_at = t_iter + 1
+                break
+            omega_prev = omega_hat.copy()
 
-    out = {"l1s": np.array(l1s), "cos_sims": np.array(coss), "n_decisive": np.array(n_dec)}
+    out = {"l1s": np.array(l1s), "cos_sims": np.array(coss), "n_decisive": np.array(n_dec),
+           "stopped_at": stopped_at}
     out.update(_final_metrics(omega_hat, omega_star, holdout_deltas, regret_seed, dim,
                               feature_cov, feature_scale))
     return out
@@ -136,6 +153,8 @@ def run_trial_bt(
     forcing_kwargs: Optional[Dict] = None,
     bt_scale: Optional[float] = None,
     T: int = 40,
+    convergence_tol: Optional[float] = None,
+    convergence_patience: int = 5,
     n_candidates: int = 30,
     n_samples: int = 200,
     burn_in: int = 100,
@@ -171,14 +190,24 @@ def run_trial_bt(
 
     l1s, coss, n_dec, n_forced_list = [], [], [], []
     n_forced = 0
-    for _ in range(T):
+    omega_prev = omega_hat.copy()
+    n_stable = 0
+    stopped_at = T
+    for t_iter in range(T):
         candidates = sample_queries(n_candidates, dim, cand_rng, similarity=query_sigma,
                                     cov=feature_cov, scale=feature_scale)
         q = select_query_bald(candidates, posterior, probs_fn, mcmc_rng)
-        raw = sample_response(q, omega_star, tau_r, tau_kappa, noise_scale, noise_type, oracle_rng)
 
-        if raw in ("left", "right"):
-            label = raw
+        # Pure-BT respondent setup (no multi-frame outcomes from the agent):
+        # the agent ALWAYS returns left/right via Bradley-Terry, regardless of
+        # (tau_r, tau_kappa). The interface then post-hoc categorizes the
+        # query as decisive/indecisive — on indecisive queries the agent's BT
+        # response is discarded and replaced by the forcing rule.
+        agent_label = sample_response_bt(q, omega_star, noise_scale, oracle_rng)
+        category = categorize_query(q, omega_star, tau_r, tau_kappa,
+                                     noise_scale, noise_type, oracle_rng)
+        if category == "decisive":
+            label = agent_label
         elif forcing is None:
             label = None  # skip
         else:
@@ -196,11 +225,21 @@ def run_trial_bt(
         coss.append(cosine_sim(omega_hat, omega_star))
         n_dec.append(len(dvecs))
         n_forced_list.append(n_forced)
+        # Convergence check: |omega_t - omega_{t-1}|_1 < tol for `patience` consecutive steps.
+        if convergence_tol is not None:
+            if float(np.abs(omega_hat - omega_prev).sum()) < convergence_tol:
+                n_stable += 1
+            else:
+                n_stable = 0
+            if n_stable >= convergence_patience:
+                stopped_at = t_iter + 1
+                break
+            omega_prev = omega_hat.copy()
 
     out = {
         "l1s": np.array(l1s), "cos_sims": np.array(coss),
         "n_decisive": np.array(n_dec), "n_forced": np.array(n_forced_list),
-        "bt_scale": bt_scale,
+        "bt_scale": bt_scale, "stopped_at": stopped_at,
     }
     out.update(_final_metrics(omega_hat, omega_star, holdout_deltas, regret_seed, dim,
                               feature_cov, feature_scale))

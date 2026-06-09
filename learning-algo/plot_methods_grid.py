@@ -168,7 +168,7 @@ def plot_methods_grid(
                         color=color, alpha=0.2)
 
             ax.set_xlim(1, T)
-            ax.grid(True, alpha=0.3)
+            ax.grid(False)
             if i == 0:
                 ax.set_xlabel(rf'$\tau_r={tau}$', fontsize=9)
             if j == 0:

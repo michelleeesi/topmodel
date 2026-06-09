@@ -85,7 +85,7 @@ CONFIG = dict(
     T=60,
     N=15,
     noise_type="logistic",           # oracle and all learners use logistic noise.
-    scale_delta=0.5,                 # logistic scale s — same parameter BT uses internally.
+    scale_delta=0.1,                 # logistic scale s — same parameter BT uses internally.
     scale_r=0.0,
     lambda_x=1.0,
     shape_beta=2.0,                  # only used if noise_type == 'gennorm' — ignored here.

@@ -55,6 +55,7 @@ def load_helpers_from_notebook(nb_path):
         "def run_grid_sweep",                 # cell 10: serial grid sweep
         "def sample_posterior_mog",           # cell 11: MoG-noise helpers
         "def run_grid_sweep_parallel",        # cell 12: parallel runner
+        "def sample_posterior_threshold_learning",  # cell 13: joint (omega, tau_r, tau_kappa) sampler
     ]
 
     cell_sources = ["".join(c.get("source", [])) for c in nb["cells"]]
@@ -77,10 +78,10 @@ def load_helpers_from_notebook(nb_path):
 CONFIG = dict(
     tau_rs=[0.0, 0.2, 0.4, 0.6, 0.8],
     tau_kappas=[0.0, 0.2, 0.4, 0.6, 0.8],
-    T=60,
-    N=15,
+    T=100,
+    N=30,
     noise_type="logistic",
-    scale_delta=0.5,                 # logistic scale s — same parameter ignore uses internally.
+    scale_delta=0.1,                 # logistic scale s — same parameter ignore uses internally.
     scale_r=0.0,
     lambda_x=1.0,
     shape_beta=2.0,                  # only used if noise_type == 'gennorm' — ignored here.
@@ -90,6 +91,7 @@ CONFIG = dict(
         "utilize",
         "utilize_3outcome",
         "utilize_unknown_family",
+        "utilize_threshold_learning",  # learns (tau_r, tau_kappa) jointly w/ omega
         "ignore",                    # apples-to-apples MCMC counterpart to utilize
         "ignore_mog",                # noise-agnostic Ignore (joint Gibbs over MoG noise)
     ],
@@ -126,7 +128,7 @@ def main():
     pkl_path = HERE / f"grid_sweep_ui_5methods_{ts}.pkl"
     metadata = {**CONFIG, "elapsed_seconds": elapsed, "n_jobs": n_jobs}
     metadata["description"] = (
-        "5x5 (tau_r, tau_kappa) grid with T=60, N=15. 5 methods — utilize, "
+        "5x5 (tau_r, tau_kappa) grid with T=100, N=30. 5 methods — utilize, "
         "utilize_3outcome, utilize_unknown_family (MoG noise), ignore, "
         "ignore_mog (MoG noise). All hit-and-run MCMC posteriors. Oracle DGP: "
         "LOGISTIC noise. Methods isolate two axes: (1) response granularity "
